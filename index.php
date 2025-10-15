@@ -5,7 +5,7 @@
         <script src="script.js"></script>
     </head>
     <body>
-        <h1>Welcome to My PHP Page</h1>
+        <h1>jhostyn</h1>
         <p>This is a simple PHP page with linked CSS and JavaScript files.</p>
         <?php
             echo "<p>Codigo genera con php</p>";
