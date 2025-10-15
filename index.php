@@ -7,6 +7,7 @@
     <body>
         <h1>TRABAJO COLABORATIVO</h1>
         <h2>SOY POLK VERNAZA</h2>
+        <h3>HOLA SOY JHONSTYN</h3>
         <p>This is a simple PHP page with linked CSS and JavaScript files.</p>
         <?php
             echo "<p>Codigo genera con php</p>";
