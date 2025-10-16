@@ -72,7 +72,7 @@ git config --global user.email "tuemail@ejemplo.com"
 git config --list
 
 Clonar el Repositorio
-git clone https://github.com/usuario/repositorio-colaborativo-fullstack.git
+git clone https://github.com/o698polk/3a_programacion_web.git
 cd repositorio-colaborativo-fullstack
 
 Crear y Cambiar de Rama
