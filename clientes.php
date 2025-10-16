@@ -11,11 +11,11 @@
     <body>
 
   <h1> clientes  </h1>
-        </body>
-</html>
-
-
-       
+    <ul>
+        <li>cliente 1</li>
+        <li>cliente 2</li>
+        <li>cliente 3</li>  
+    </ul>
  </body>
 </html>
 
