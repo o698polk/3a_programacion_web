@@ -1,4 +1,4 @@
-# 🌐 Repositorio de Ejercicios y Proyectos Colaborativos — Full Stack (PHP, HTML, CSS, JavaScript)
+# 🌐 Repositorio de Ejercicios y Proyectos Colaborativos — Full Stack (PHP, HTML, CSS, JavaScript)- ISTAE(https://www.istae.edu.ec/)
 
 Bienvenido/a al **Repositorio de Ejercicios y Proyectos Colaborativos** del **Instituto Superior Tecnológico Alberto Enríquez**.  
 Este espacio ha sido creado para que los estudiantes trabajen en equipo, desarrollando **habilidades técnicas y colaborativas** bajo el modelo **de desarrollo colaborativo con Git y GitHub**.
