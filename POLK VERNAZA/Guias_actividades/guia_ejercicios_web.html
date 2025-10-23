@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Ejercicios Web - De Básico a Intermedio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px 0;
+        }
+        .container-main {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            padding: 40px;
+            margin: 20px auto;
+            max-width: 1200px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+        }
+        .header h1 {
+            color: #667eea;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .nivel-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .basico {
+            background: #d4edda;
+            color: #155724;
+        }
+        .intermedio {
+            background: #fff3cd;
+            color: #856404;
+        }
+        .ejercicio-card {
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+        .ejercicio-card:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+        .ejercicio-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px 8px 0 0;
+            cursor: pointer;
+        }
+        .ejercicio-body {
+            padding: 20px;
+        }
+        .codigo-seccion {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .tech-tag {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 5px;
+            font-size: 0.85em;
+            margin: 2px;
+            font-weight: 600;
+        }
+        .html-tag { background: #e34c26; color: white; }
+        .css-tag { background: #264de4; color: white; }
+        .js-tag { background: #f7df1e; color: #333; }
+        .php-tag { background: #777bb4; color: white; }
+        .explicacion {
+            background: #e7f3ff;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .resultado {
+            background: #f0f8f0;
+            border: 2px dashed #4caf50;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        pre {
+            background: #2d2d2d;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', monospace;
+        }
+        .nav-pills .nav-link {
+            color: #667eea;
+            font-weight: 600;
+        }
+        .nav-pills .nav-link.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="container-main">
+        <div class="header">
+            <h1>🚀 Guía Completa de Ejercicios Web</h1>
+            <p class="lead">HTML, CSS, JavaScript y PHP - De Básico a Intermedio</p>
+        </div>
+
+        <ul class="nav nav-pills mb-4" id="tecTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="html-tab" data-bs-toggle="pill" data-bs-target="#html" type="button">HTML</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="css-tab" data-bs-toggle="pill" data-bs-target="#css" type="button">CSS</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="js-tab" data-bs-toggle="pill" data-bs-target="#js" type="button">JavaScript</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="php-tab" data-bs-toggle="pill" data-bs-target="#php" type="button">PHP</button>
+            </li>
+        </ul>
+
+        <div class="tab-content" id="tecTabContent">
+            <!-- HTML -->
+            <div class="tab-pane fade show active" id="html" role="tabpanel">
+                <h2 class="mb-4">📄 Ejercicios de HTML</h2>
+
+                <!-- Ejercicio HTML 1 -->
+                <div class="ejercicio-card">
+                    <div class="ejercicio-header">
+                        <span class="nivel-badge basico">BÁSICO</span>
+                        <span class="tech-tag html-tag">HTML</span>
+                        <h4 class="d-inline ms-2">Ejercicio 1: Estructura Básica y Formulario</h4>
+                    </div>
+                    <div class="ejercicio-body">
+                        <h5>📋 Objetivo:</h5>
+                        <p>Crear una página HTML con estructura semántica que incluya un formulario de registro con validación básica.</p>
+                        
+                        <div class="explicacion">
+                            <h6>💡 Conceptos que aprenderás:</h6>
+                            <ul>
+                                <li>Estructura HTML5 semántica (header, main, footer)</li>
+                                <li>Formularios y tipos de inputs</li>
+                                <li>Atributos required, placeholder, pattern</li>
+                                <li>Labels y accesibilidad</li>
+                            </ul>
+                        </div>
+
+                        <div class="codigo-seccion">
+                            <h6>✅ Solución:</h6>
+                            <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Formulario de Registro&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Registro de Usuario&lt;/h1&gt;
+        &lt;nav&gt;
+            &lt;a href="#inicio"&gt;Inicio&lt;/a&gt;
+            &lt;a href="#contacto"&gt;Contacto&lt;/a&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;main&gt;
+        &lt;section&gt;
+            &lt;h2&gt;Complete sus datos&lt;/h2&gt;
+            &lt;form action="procesar.php" method="POST"&gt;
+                &lt;div&gt;
+                    &lt;label for="nombre"&gt;Nombre completo:&lt;/label&gt;
+                    &lt;input type="text" id="nombre" name="nombre" 
+                           required placeholder="Juan Pérez"&gt;
+                &lt;/div&gt;
+
+                &lt;div&gt;
+                    &lt;label for="email"&gt;Email:&lt;/label&gt;
+                    &lt;input type="email" id="email" name="email" 
+                           required placeholder="usuario@email.com"&gt;
+                &lt;/div&gt;
+
+                &lt;div&gt;
+                    &lt;label for="edad"&gt;Edad:&lt;/label&gt;
+                    &lt;input type="number" id="edad" name="edad" 
+                           min="18" max="100" required&gt;
+                &lt;/div&gt;
+
+                &lt;div&gt;
+                    &lt;label for="genero"&gt;Género:&lt;/label&gt;
+                    &lt;select id="genero" name="genero" required&gt;
+                        &lt;option value=""&gt;Seleccione...&lt;/option&gt;
+                        &lt;option value="masculino"&gt;Masculino&lt;/option&gt;
+                        &lt;option value="femenino"&gt;Femenino&lt;/option&gt;
+                        &lt;option value="otro"&gt;Otro&lt;/option&gt;
+                    &lt;/select&gt;
+                &lt;/div&gt;
+
+                &lt;div&gt;
+                    &lt;label&gt;
+                        &lt;input type="checkbox" name="terminos" required&gt;
+                        Acepto los términos y condiciones
+                    &lt;/label&gt;
+                &lt;/div&gt;
+
+                &lt;button type="submit"&gt;Registrarse&lt;/button&gt;
+            &lt;/form&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+
+    &lt;footer&gt;
+        &lt;p&gt;&copy; 2024 Mi Sitio Web. Todos los derechos reservados.&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        </div>
+
+                        <div class="explicacion">
+                            <h6>🔍 Explicación paso a paso:</h6>
+                            <ol>
+                                <li><strong>&lt;header&gt;, &lt;main&gt;, &lt;footer&gt;:</strong> Elementos semánticos que dan estructura y significado al documento</li>
+                                <li><strong>type="email":</strong> Valida automáticamente el formato de email</li>
+                                <li><strong>required:</strong> Hace que el campo sea obligatorio</li>
+                                <li><strong>min/max:</strong> Establece límites para números</li>
+                                <li><strong>placeholder:</strong> Muestra un texto de ejemplo</li>
+                                <li><strong>&lt;label for="id"&gt;:</strong> Asocia la etiqueta con el input para accesibilidad</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ejercicio HTML 2 -->
+                <div class="ejercicio-card">
+                    <div class="ejercicio-header">
+                        <span class="nivel-badge intermedio">INTERMEDIO</span>
+                        <span class="tech-tag html-tag">HTML</span>
+                        <h4 class="d-inline ms-2">Ejercicio 2: Tabla Compleja con Datos</h4>
+                    </div>
+                    <div class="ejercicio-body">
+                        <h5>📋 Objetivo:</h5>
+                        <p>Crear una tabla HTML con encabezados, filas combinadas y estructura compleja para mostrar información de productos.</p>
+                        
+                        <div class="codigo-seccion">
+                            <h6>✅ Solución:</h6>
+                            <pre><code class="language-html">&lt;table border="1" style="border-collapse: collapse; width: 100%;"&gt;
+    &lt;caption&gt;Catálogo de Productos - Q4 2024&lt;/caption&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th rowspan="2"&gt;ID&lt;/th&gt;
+            &lt;th rowspan="2"&gt;Producto&lt;/th&gt;
+            &lt;th colspan="2"&gt;Precio&lt;/th&gt;
+            &lt;th rowspan="2"&gt;Stock&lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Normal&lt;/th&gt;
+            &lt;th&gt;Descuento&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;001&lt;/td&gt;
+            &lt;td&gt;Laptop HP&lt;/td&gt;
+            &lt;td&gt;$800&lt;/td&gt;
+            &lt;td&gt;$720&lt;/td&gt;
+            &lt;td&gt;15&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;002&lt;/td&gt;
+            &lt;td&gt;Mouse Logitech&lt;/td&gt;
+            &lt;td&gt;$25&lt;/td&gt;
+            &lt;td&gt;$20&lt;/td&gt;
+            &lt;td&gt;50&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;003&lt;/td&gt;
+            &lt;td&gt;Teclado Mecánico&lt;/td&gt;
+            &lt;td&gt;$120&lt;/td&gt;
+            &lt;td&gt;$100&lt;/td&gt;
+            &lt;td&gt;30&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+    &lt;tfoot&gt;
+        &lt;tr&gt;
+            &lt;td colspan="4"&gt;&lt;strong&gt;Total de productos:&lt;/strong&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;strong&gt;95&lt;/strong&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tfoot&gt;
+&lt;/table&gt;</code></pre>
+                        </div>
+
+                        <div class="explicacion">
+                            <h6>🔍 Conceptos clave:</h6>
+                            <ul>
+                                <li><strong>document.getElementById():</strong> Selecciona un elemento por su ID</li>
+                                <li><strong>parseFloat():</strong> Convierte texto a número decimal</li>
+                                <li><strong>isNaN():</strong> Verifica si un valor no es un número</li>
+                                <li><strong>switch:</strong> Estructura para múltiples condiciones</li>
+                                <li><strong>toFixed(2):</strong> Redondea a 2 decimales</li>
+                                <li><strong>Arrow functions:</strong> Sintaxis moderna de funciones (=&gt;)</li>
+                                <li><strong>Template literals:</strong> Uso de ${variable} dentro de ``</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ejercicio JS 2 -->
+                <div class="ejercicio-card">
+                    <div class="ejercicio-header">
+                        <span class="nivel-badge intermedio">INTERMEDIO</span>
+                        <span class="tech-tag js-tag">JavaScript</span>
+                        <h4 class="d-inline ms-2">Ejercicio 2: Lista de Tareas (To-Do List)</h4>
+                    </div>
+                    <div class="ejercicio-body">
+                        <h5>📋 Objetivo:</h5>
+                        <p>Crear una aplicación de lista de tareas con agregar, eliminar y marcar como completadas.</p>
+                        
+                        <div class="codigo-seccion">
+                            <h6>HTML:</h6>
+                            <pre><code class="language-html">&lt;div class="todo-app"&gt;
+    &lt;h2&gt;📝 Mi Lista de Tareas&lt;/h2&gt;
+    &lt;div class="input-container"&gt;
+        &lt;input type="text" id="tareaInput" placeholder="Escribe una tarea..."&gt;
+        &lt;button onclick="agregarTarea()"&gt;Agregar&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;ul id="listaTareas"&gt;&lt;/ul&gt;
+    &lt;div id="contador"&gt;Tareas pendientes: 0&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+
+                        <div class="codigo-seccion">
+                            <h6>✅ JavaScript:</h6>
+                            <pre><code class="language-javascript">// Array para almacenar las tareas
+let tareas = [];
+let contadorId = 0;
+
+// Función para agregar una nueva tarea
+function agregarTarea() {
+    const input = document.getElementById('tareaInput');
+    const texto = input.value.trim();
+    
+    // Validar que no esté vacío
+    if (texto === '') {
+        alert('Por favor escribe una tarea');
+        return;
+    }
+    
+    // Crear objeto de tarea
+    const nuevaTarea = {
+        id: contadorId++,
+        texto: texto,
+        completada: false,
+        fecha: new Date().toLocaleString()
+    };
+    
+    // Agregar al array
+    tareas.push(nuevaTarea);
+    
+    // Limpiar input
+    input.value = '';
+    
+    // Actualizar la vista
+    renderizarTareas();
+    actualizarContador();
+}
+
+// Función para renderizar todas las tareas
+function renderizarTareas() {
+    const lista = document.getElementById('listaTareas');
+    lista.innerHTML = ''; // Limpiar lista
+    
+    tareas.forEach(tarea => {
+        // Crear elemento li
+        const li = document.createElement('li');
+        li.className = tarea.completada ? 'completada' : '';
+        
+        // Crear checkbox
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.checked = tarea.completada;
+        checkbox.onchange = () => toggleTarea(tarea.id);
+        
+        // Crear span con el texto
+        const span = document.createElement('span');
+        span.textContent = tarea.texto;
+        span.style.textDecoration = tarea.completada ? 'line-through' : 'none';
+        
+        // Crear botón de eliminar
+        const btnEliminar = document.createElement('button');
+        btnEliminar.textContent = '🗑️';
+        btnEliminar.className = 'btn-eliminar';
+        btnEliminar.onclick = () => eliminarTarea(tarea.id);
+        
+        // Agregar elementos al li
+        li.appendChild(checkbox);
+        li.appendChild(span);
+        li.appendChild(btnEliminar);
+        
+        // Agregar li a la lista
+        lista.appendChild(li);
+    });
+}
+
+// Función para marcar/desmarcar tarea como completada
+function toggleTarea(id) {
+    const tarea = tareas.find(t => t.id === id);
+    if (tarea) {
+        tarea.completada = !tarea.completada;
+        renderizarTareas();
+        actualizarContador();
+    }
+}
+
+// Función para eliminar una tarea
+function eliminarTarea(id) {
+    // Confirmar eliminación
+    if (confirm('¿Estás seguro de eliminar esta tarea?')) {
+        tareas = tareas.filter(t => t.id !== id);
+        renderizarTareas();
+        actualizarContador();
+    }
+}
+
+// Función para actualizar el contador
+function actualizarContador() {
+    const pendientes = tareas.filter(t => !t.completada).length;
+    const contador = document.getElementById('contador');
+    contador.textContent = `Tareas pendientes: ${pendientes} / Total: ${tareas.length}`;
+}
+
+// Permitir agregar con Enter
+document.getElementById('tareaInput').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        agregarTarea();
+    }
+});
+
+// Funciones adicionales útiles
+
+// Guardar tareas en localStorage
+function guardarTareas() {
+    localStorage.setItem('tareas', JSON.stringify(tareas));
+}
+
+// Cargar tareas desde localStorage
+function cargarTareas() {
+    const tareasGuardadas = localStorage.getItem('tareas');
+    if (tareasGuardadas) {
+        tareas = JSON.parse(tareasGuardadas);
+        renderizarTareas();
+        actualizarContador();
+    }
+}
+
+// Limpiar todas las tareas completadas
+function limpiarCompletadas() {
+    tareas = tareas.filter(t => !t.completada);
+    renderizarTareas();
+    actualizarContador();
+}</code></pre>
+                        </div>
+
+                        <div class="explicacion">
+                            <h6>🔍 Conceptos avanzados:</h6>
+                            <ul>
+                                <li><strong>Arrays y objetos:</strong> Estructuras de datos para organizar información</li>
+                                <li><strong>forEach():</strong> Itera sobre cada elemento del array</li>
+                                <li><strong>find():</strong> Busca un elemento que cumple una condición</li>
+                                <li><strong>filter():</strong> Crea nuevo array con elementos que cumplen condición</li>
+                                <li><strong>createElement():</strong> Crea elementos HTML dinámicamente</li>
+                                <li><strong>addEventListener():</strong> Escucha eventos del usuario</li>
+                                <li><strong>localStorage:</strong> Almacena datos en el navegador</li>
+                                <li><strong>JSON.stringify/parse:</strong> Convierte objetos a texto y viceversa</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ejercicio JS 3 -->
+                <div class="ejercicio-card">
+                    <div class="ejercicio-header">
+                        <span class="nivel-badge intermedio">INTERMEDIO</span>
+                        <span class="tech-tag js-tag">JavaScript</span>
+                        <h4 class="d-inline ms-2">Ejercicio 3: Validador de Formulario en Tiempo Real</h4>
+                    </div>
+                    <div class="ejercicio-body">
+                        <h5>📋 Objetivo:</h5>
+                        <p>Crear validación en tiempo real para un formulario con feedback visual inmediato.</p>
+                        
+                        <div class="codigo-seccion">
+                            <h6>HTML:</h6>
+                            <pre><code class="language-html">&lt;form id="formularioRegistro" onsubmit="return validarFormulario(event)"&gt;
+    &lt;div class="form-group"&gt;
+        &lt;label for="usuario"&gt;Usuario:&lt;/label&gt;
+        &lt;input type="text" id="usuario" name="usuario"&gt;
+        &lt;span class="error" id="errorUsuario"&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="form-group"&gt;
+        &lt;label for="email"&gt;Email:&lt;/label&gt;
+        &lt;input type="email" id="email" name="email"&gt;
+        &lt;span class="error" id="errorEmail"&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="form-group"&gt;
+        &lt;label for="password"&gt;Contraseña:&lt;/label&gt;
+        &lt;input type="password" id="password" name="password"&gt;
+        &lt;span class="error" id="errorPassword"&gt;&lt;/span&gt;
+        &lt;div class="password-strength" id="passwordStrength"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="form-group"&gt;
+        &lt;label for="confirmarPassword"&gt;Confirmar Contraseña:&lt;/label&gt;
+        &lt;input type="password" id="confirmarPassword" name="confirmarPassword"&gt;
+        &lt;span class="error" id="errorConfirmar"&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    
+    &lt;button type="submit"&gt;Registrarse&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                        </div>
+
+                        <div class="codigo-seccion">
+                            <h6>✅ JavaScript:</h6>
+                            <pre><code class="language-javascript">// Objeto con las reglas de validación
+const reglas = {
+    usuario: {
+        minLength: 4,
+        maxLength: 20,
+        pattern: /^[a-zA-Z0-9_]+$/,
+        mensaje: 'El usuario debe tener entre 4-20 caracteres (letras, números y _)'
+    },
+    email: {
+        pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+        mensaje: 'Ingrese un email válido'
+    },
+    password: {
+        minLength: 8,
+        pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/,
+        mensaje: 'La contraseña debe tener mínimo 8 caracteres, una mayúscula, una minúscula y un número'
+    }
+};
+
+// Agregar eventos de validación en tiempo real
+document.getElementById('usuario').addEventListener('input', function() {
+    validarCampo('usuario', this.value);
+});
+
+document.getElementById('email').addEventListener('input', function() {
+    validarCampo('email', this.value);
+});
+
+document.getElementById('password').addEventListener('input', function() {
+    validarCampo('password', this.value);
+    verificarFortalezaPassword(this.value);
+    validarConfirmacion();
+});
+
+document.getElementById('confirmarPassword').addEventListener('input', validarConfirmacion);
+
+// Función para validar un campo específico
+function validarCampo(campo, valor) {
+    const regla = reglas[campo];
+    const errorSpan = document.getElementById(`error${campo.charAt(0).toUpperCase() + campo.slice(1)}`);
+    const input = document.getElementById(campo);
+    
+    let esValido = true;
+    let mensajeError = '';
+    
+    // Validar longitud mínima
+    if (regla.minLength && valor.length < regla.minLength) {
+        esValido = false;
+        mensajeError = regla.mensaje;
+    }
+    
+    // Validar longitud máxima
+    if (regla.maxLength && valor.length > regla.maxLength) {
+        esValido = false;
+        mensajeError = regla.mensaje;
+    }
+    
+    // Validar patrón
+    if (regla.pattern && !regla.pattern.test(valor) && valor.length > 0) {
+        esValido = false;
+        mensajeError = regla.mensaje;
+    }
+    
+    // Mostrar/ocultar error
+    if (esValido || valor.length === 0) {
+        errorSpan.textContent = '';
+        input.style.borderColor = valor.length > 0 ? 'green' : '';
+    } else {
+        errorSpan.textContent = mensajeError;
+        input.style.borderColor = 'red';
+    }
+    
+    return esValido;
+}
+
+// Verificar fortaleza de la contraseña
+function verificarFortalezaPassword(password) {
+    const strengthDiv = document.getElementById('passwordStrength');
+    let fortaleza = 0;
+    let mensaje = '';
+    let color = '';
+    
+    if (password.length >= 8) fortaleza++;
+    if (/[a-z]/.test(password)) fortaleza++;
+    if (/[A-Z]/.test(password)) fortaleza++;
+    if (/\d/.test(password)) fortaleza++;
+    if (/[!@#$%^&*]/.test(password)) fortaleza++;
+    
+    switch(fortaleza) {
+        case 0:
+        case 1:
+            mensaje = '';
+            color = '';
+            break;
+        case 2:
+            mensaje = '🔴 Contraseña débil';
+            color = 'red';
+            break;
+        case 3:
+            mensaje = '🟡 Contraseña media';
+            color = 'orange';
+            break;
+        case 4:
+            mensaje = '🟢 Contraseña fuerte';
+            color = 'green';
+            break;
+        case 5:
+            mensaje = '🟢 Contraseña muy fuerte';
+            color = 'darkgreen';
+            break;
+    }
+    
+    strengthDiv.textContent = mensaje;
+    strengthDiv.style.color = color;
+}
+
+// Validar que las contraseñas coincidan
+function validarConfirmacion() {
+    const password = document.getElementById('password').value;
+    const confirmar = document.getElementById('confirmarPassword').value;
+    const errorSpan = document.getElementById('errorConfirmar');
+    const input = document.getElementById('confirmarPassword');
+    
+    if (confirmar.length === 0) {
+        errorSpan.textContent = '';
+        input.style.borderColor = '';
+        return false;
+    }
+    
+    if (password !== confirmar) {
+        errorSpan.textContent = 'Las contraseñas no coinciden';
+        input.style.borderColor = 'red';
+        return false;
+    } else {
+        errorSpan.textContent = '✓ Las contraseñas coinciden';
+        errorSpan.style.color = 'green';
+        input.style.borderColor = 'green';
+        return true;
+    }
+}
+
+// Validar todo el formulario al enviar
+function validarFormulario(event) {
+    event.preventDefault(); // Prevenir envío por defecto
+    
+    const usuario = document.getElementById('usuario').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    
+    // Validar todos los campos
+    const usuarioValido = validarCampo('usuario', usuario);
+    const emailValido = validarCampo('email', email);
+    const passwordValido = validarCampo('password', password);
+    const confirmacionValida = validarConfirmacion();
+    
+    // Si todo es válido, enviar
+    if (usuarioValido && emailValido && passwordValido && confirmacionValida) {
+        alert('✅ Formulario válido. Enviando datos...');
+        // Aquí iría el código para enviar al servidor
+        console.log({
+            usuario: usuario,
+            email: email,
+            password: password
+        });
+        return true;
+    } else {
+        alert('❌ Por favor corrija los errores en el formulario');
+        return false;
+    }
+}</code></pre>
+                        </div>
+
+                        <div class="explicacion">
+                            <h6>🔍 Conceptos importantes:</h6>
+                            <ul>
+                                <li><strong>RegEx (Expresiones Regulares):</strong> Patrones para validar texto</li>
+                                <li><strong>event.preventDefault():</strong> Previene el comportamiento por defecto</li>
+                                <li><strong>input event:</strong> Se dispara cada vez que cambia el valor</li>
+                                <li><strong>test():</strong> Método de regex que devuelve true/false</li>
+                                <li><strong>charAt() y slice():</strong> Manipulación de strings</li>
+                                <li><strong>Validación en tiempo real:</strong> Feedback inmediato al usuario</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PHP -->
+            <div class="tab-pane fade" id="php" role="tabpanel">
+                <h2 class="mb-4">🐘 Ejercicios de PHP</h2>
+
+                <!-- Ejercicio PHP 1 -->
+                <div class="ejercicio-card">
+                    <div class="ejercicio-header">
+                        <span class="nivel-badge basico">BÁSICO</span>
+                        <span class="tech-tag php-tag">PHP</span>
+                        <h4 class="d-inline ms-2">Ejercicio 1: Procesamiento de Formulario</h4>
+                    </div>
+                    <div class="ejercicio-body">
+                        <h5>📋 Objetivo:</h5>
+                        <p>Crear un script PHP que procese un formulario, valide datos y muestre resultados.</p>
+                        
+                        <div class="codigo-seccion">
+                            <h6>HTML (formulario.html):</h6>
+                            <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Formulario de Contacto&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h2&gt;Formulario de Contacto&lt;/h2&gt;
+    &lt;form action="procesar.php" method="POST"&gt;
+        &lt;div&gt;
+            &lt;label&gt;Nombre:&lt;/label&gt;
+            &lt;input type="text" name="nombre" required&gt;
+        &lt;/div&gt;
+        
+        &lt;div&gt;
+            &lt;label&gt;Email:&lt;/label&gt;
+            &lt;input type="email" name="email" required&gt;
+        &lt;/div&gt;
+        
+        &lt;div&gt;
+            &lt;label&gt;Edad:&lt;/label&gt;
+            &lt;input type="number" name="edad" min="18" required&gt;
+        &lt;/div&gt;
+        
+        &lt;div&gt;
+            &lt;label&gt;Mensaje:&lt;/label&gt;
+            &lt;textarea name="mensaje" rows="4" required&gt;&lt;/textarea&gt;
+        &lt;/div&gt;
+        
+        &lt;button type="submit"&gt;Enviar&lt;/button&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        </div>
+
+                        <div class="codigo-seccion">
+                            <h6>✅ PHP (procesar.php):</h6>
+                            <pre><code class="language-php">&lt;?php
+// Verificar que el formulario fue enviado por POST
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    
+    // Función para limpiar y validar datos
+    function limpiarDato($dato) {
+        $dato = trim($dato); // Eliminar espacios
+        $dato = stripslashes($dato); // Eliminar barras invertidas
+        $dato = htmlspecialchars($dato); // Convertir caracteres especiales
+        return $dato;
+    }
+    
+    // Inicializar array de errores
+    $errores = array();
+    
+    // Recibir y limpiar datos
+    $nombre = limpiarDato($_POST["nombre"]);
+    $email = limpiarDato($_POST["email"]);
+    $edad = limpiarDato($_POST["edad"]);
+    $mensaje = limpiarDato($_POST["mensaje"]);
+    
+    // Validar nombre
+    if (empty($nombre)) {
+        $errores[] = "El nombre es obligatorio";
+    } elseif (strlen($nombre) < 3) {
+        $errores[] = "El nombre debe tener al menos 3 caracteres";
+    } elseif (!preg_match("/^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$/", $nombre)) {
+        $errores[] = "El nombre solo debe contener letras y espacios";
+    }
+    
+    // Validar email
+    if (empty($email)) {
+        $errores[] = "El email es obligatorio";
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errores[] = "El formato del email no es válido";
+    }
+    
+    // Validar edad
+    if (empty($edad)) {
+        $errores[] = "La edad es obligatoria";
+    } elseif (!is_numeric($edad)) {
+        $errores[] = "La edad debe ser un número";
+    } elseif ($edad < 18 || $edad > 120) {
+        $errores[] = "La edad debe estar entre 18 y 120 años";
+    }
+    
+    // Validar mensaje
+    if (empty($mensaje)) {
+        $errores[] = "El mensaje es obligatorio";
+    } elseif (strlen($mensaje) < 10) {
+        $errores[] = "El mensaje debe tener al menos 10 caracteres";
+    }
+    
+    // Mostrar resultados
+    if (empty($errores)) {
+        // Todo está correcto
+        echo "&lt;h2 style='color: green;'&gt;✅ Datos recibidos correctamente&lt;/h2&gt;";
+        echo "&lt;div style='background: #f0f8f0; padding: 20px; border-radius: 10px;'&gt;";
+        echo "&lt;h3&gt;Información recibida:&lt;/h3&gt;";
+        echo "&lt;p&gt;&lt;strong&gt;Nombre:&lt;/strong&gt; " . $nombre . "&lt;/p&gt;";
+        echo "&lt;p&gt;&lt;strong&gt;Email:&lt;/strong&gt; " . $email . "&lt;/p&gt;";
+        echo "&lt;p&gt;&lt;strong&gt;Edad:&lt;/strong&gt; " . $edad . " años&lt;/p&gt;";
+        echo "&lt;p&gt;&lt;strong&gt;Mensaje:&lt;/strong&gt; " . $mensaje . "&lt;/p&gt;";
+        echo "&lt;/div&gt;";
+        
+        // Aquí podrías guardar en base de datos o enviar email
+        // guardarEnBaseDatos($nombre, $email, $edad, $mensaje);
+        // enviarEmail($email, $mensaje);
+        
+    } else {
+        // Hay errores
+        echo "&lt;h2 style='color: red;'&gt;❌ Errores encontrados:&lt;/h2&gt;";
+        echo "&lt;ul style='background: #ffe6e6; padding: 20px; border-radius: 10px;'&gt;";
+        foreach ($errores as $error) {
+            echo "&lt;li style='color: red; font-weight: bold;'&gt;" . $error . "&lt;/li&gt;";
+        }
+        echo "&lt;/ul&gt;";
+        echo "&lt;a href='formulario.html'&gt;Volver al formulario&lt;/a&gt;";
+    }
+    
+} else {
+    // Si intentan acceder directamente sin enviar el formulario
+    echo "&lt;h2&gt;Acceso denegado&lt;/h2&gt;";
+    echo "&lt;p&gt;Debe enviar el formulario para acceder a esta página&lt;/p&gt;";
+    echo "&lt;a href='formulario.html'&gt;Ir al formulario&lt;/a&gt;";
+}
+?&gt;</code></pre>
+                        </div>
+
+                        <div class="explicacion">
+                            <h6>🔍 Conceptos clave de PHP:</h6>
+                            <ul>
+                                <li><strong>$_POST:</strong> Superglobal que contiene datos enviados por POST</li>
+                                <li><strong>$_SERVER["REQUEST_METHOD"]:</strong> Obtiene el método HTTP usado</li>
+                                <li><strong>htmlspecialchars():</strong> Protege contra ataques XSS</li>
+                                <li><strong>filter_var():</strong> Valida y filtra datos</li>
+                                <li><strong>preg_match():</strong> Valida con expresiones regulares</li>
+                                <li><strong>empty():</strong> Verifica si una variable está vacía</li>
+                                <li><strong>is_numeric():</strong> Verifica si es un número</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ejercicio PHP 2 -->
+                <div class="ejercicio-card">
+                    <div class="ejercicio-header">
+                        <span class="nivel-badge intermedio">INTERMEDIO</span>
+                        <span class="tech-tag php-tag">PHP</span>
+                        <h4 class="d-inline ms-2">Ejercicio 2: CRUD con MySQL</h4>
+                    </div>
+                    <div class="ejercicio-body">
+                        <h5>📋 Objetivo:</h5>
+                        <p>Crear un sistema CRUD (Crear, Leer, Actualizar, Eliminar) para gestionar productos con MySQL.</p>
+                        
+                        <div class="codigo-seccion">
+                            <h6>1. Conexión a Base de Datos (conexion.php):</h6>
+                            <pre><code class="language-php">&lt;?php
+// Configuración de la base de datos
+define('DB_HOST', 'localhost');
+define('DB_USER', 'root');
+define('DB_PASS', '');
+define('DB_NAME', 'tienda');
+
+// Crear conexión
+$conexion = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+
+// Verificar conexión
+if ($conexion->connect_error) {
+    die("Error de conexión: " . $conexion->connect_error);
+}
+
+// Establecer charset UTF-8
+$conexion->set_charset("utf8");
+
+// Función para cerrar conexión
+function cerrarConexion() {
+    global $conexion;
+    $conexion->close();
+}
+?&gt;</code></pre>
+                        </div>
+
+                        <div class="codigo-seccion">
+                            <h6>2. Script SQL para crear la tabla:</h6>
+                            <pre><code class="language-sql">CREATE TABLE productos (
+    id INT(11) AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    descripcion TEXT,
+    precio DECIMAL(10,2) NOT NULL,
+    stock INT(11) NOT NULL DEFAULT 0,
+    categoria VARCHAR(50),
+    fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);</code></pre>
+                        </div>
+
+                        <div class="codigo-seccion">
+                            <h6>3. Clase Producto (Producto.php):</h6>
+                            <pre><code class="language-php">&lt;?php
+require_once 'conexion.php';
+
+class Producto {
+    private $conexion;
+    private $tabla = "productos";
+    
+    // Propiedades
+    public $id;
+    public $nombre;
+    public $descripcion;
+    public $precio;
+    public $stock;
+    public $categoria;
+    
+    // Constructor
+    public function __construct() {
+        global $conexion;
+        $this->conexion = $conexion;
+    }
+    
+    // CREATE - Crear un nuevo producto
+    public function crear() {
+        $query = "INSERT INTO " . $this->tabla . " 
+                  (nombre, descripcion, precio, stock, categoria) 
+                  VALUES (?, ?, ?, ?, ?)";
+        
+        $stmt = $this->conexion->prepare($query);
+        
+        // Limpiar datos
+        $this->nombre = htmlspecialchars(strip_tags($this->nombre));
+        $this->descripcion = htmlspecialchars(strip_tags($this->descripcion));
+        $this->precio = htmlspecialchars(strip_tags($this->precio));
+        $this->stock = htmlspecialchars(strip_tags($this->stock));
+        $this->categoria = htmlspecialchars(strip_tags($this->categoria));
+        
+        // Vincular parámetros
+        $stmt->bind_param("ssdis", 
+            $this->nombre, 
+            $this->descripcion, 
+            $this->precio, 
+            $this->stock, 
+            $this->categoria
+        );
+        
+        if ($stmt->execute()) {
+            return true;
+        }
+        
+        printf("Error: %s.\n", $stmt->error);
+        return false;
+    }
+    
+    // READ - Leer todos los productos
+    public function leerTodos() {
+        $query = "SELECT * FROM " . $this->tabla . " ORDER BY id DESC";
+        $resultado = $this->conexion->query($query);
+        return $resultado;
+    }
+    os importantes:</h6>
+                            <ul>
+                                <li><strong>rowspan:</strong> Combina celdas verticalmente</li>
+                                <li><strong>colspan:</strong> Combina celdas horizontalmente</li>
+                                <li><strong>&lt;thead&gt;, &lt;tbody&gt;, &lt;tfoot&gt;:</strong> Organizan la tabla en secciones</li>
+                                <li><strong>&lt;caption&gt;:</strong> Título descriptivo de la tabla</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CSS -->
+            <div class="tab-pane fade" id="css" role="tabpanel">
+                <h2 class="mb-4">🎨 Ejercicios de CSS</h2>
+
+                <!-- Ejercicio CSS 1 -->
+                <div class="ejercicio-card">
+                    <div class="ejercicio-header">
+                        <span class="nivel-badge basico">BÁSICO</span>
+                        <span class="tech-tag css-tag">CSS</span>
+                        <h4 class="d-inline ms-2">Ejercicio 1: Tarjeta de Producto con Hover</h4>
+                    </div>
+                    <div class="ejercicio-body">
+                        <h5>📋 Objetivo:</h5>
+                        <p>Crear una tarjeta de producto estilizada con efectos hover usando CSS moderno.</p>
+                        
+                        <div class="codigo-seccion">
+                            <h6>HTML:</h6>
+                            <pre><code class="language-html">&lt;div class="producto-card"&gt;
+    &lt;img src="producto.jpg" alt="Producto" class="producto-img"&gt;
+    &lt;div class="producto-info"&gt;
+        &lt;h3 class="producto-titulo"&gt;Smartphone XYZ&lt;/h3&gt;
+        &lt;p class="producto-descripcion"&gt;El mejor teléfono del mercado&lt;/p&gt;
+        &lt;p class="producto-precio"&gt;$599.99&lt;/p&gt;
+        &lt;button class="producto-btn"&gt;Agregar al Carrito&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+
+                        <div class="codigo-seccion">
+                            <h6>✅ CSS:</h6>
+                            <pre><code class="language-css">/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Tarjeta del producto */
+.producto-card {
+    width: 300px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 20px;
+}
+
+.producto-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagen del producto */
+.producto-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.producto-card:hover .producto-img {
+    transform: scale(1.1);
+}
+
+/* Información del producto */
+.producto-info {
+    padding: 20px;
+}
+
+.producto-titulo {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.producto-descripcion {
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.producto-precio {
+    font-size: 1.8em;
+    color: #e74c3c;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Botón */
+.producto-btn {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.producto-btn:hover {
+    opacity: 0.9;
+}</code></pre>
+                        </div>
+
+                        <div class="explicacion">
+                            <h6>🔍 Conceptos clave:</h6>
+                            <ul>
+                                <li><strong>box-sizing: border-box:</strong> Incluye padding y border en el ancho total</li>
+                                <li><strong>transition:</strong> Crea animaciones suaves entre estados</li>
+                                <li><strong>transform:</strong> Aplica transformaciones 2D/3D (translateY, scale)</li>
+                                <li><strong>:hover:</strong> Pseudo-clase que se activa al pasar el mouse</li>
+                                <li><strong>linear-gradient:</strong> Crea gradientes de color</li>
+                                <li><strong>object-fit: cover:</strong> Ajusta la imagen sin distorsión</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ejercicio CSS 2 -->
+                <div class="ejercicio-card">
+                    <div class="ejercicio-header">
+                        <span class="nivel-badge intermedio">INTERMEDIO</span>
+                        <span class="tech-tag css-tag">CSS</span>
+                        <h4 class="d-inline ms-2">Ejercicio 2: Layout Responsivo con Flexbox</h4>
+                    </div>
+                    <div class="ejercicio-body">
+                        <h5>📋 Objetivo:</h5>
+                        <p>Crear un layout de galería que se adapte a diferentes tamaños de pantalla usando Flexbox.</p>
+                        
+                        <div class="codigo-seccion">
+                            <h6>HTML:</h6>
+                            <pre><code class="language-html">&lt;div class="galeria-container"&gt;
+    &lt;div class="galeria-item"&gt;Item 1&lt;/div&gt;
+    &lt;div class="galeria-item"&gt;Item 2&lt;/div&gt;
+    &lt;div class="galeria-item"&gt;Item 3&lt;/div&gt;
+    &lt;div class="galeria-item"&gt;Item 4&lt;/div&gt;
+    &lt;div class="galeria-item"&gt;Item 5&lt;/div&gt;
+    &lt;div class="galeria-item"&gt;Item 6&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+
+                        <div class="codigo-seccion">
+                            <h6>✅ CSS:</h6>
+                            <pre><code class="language-css">/* Contenedor de la galería */
+.galeria-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+/* Items de la galería */
+.galeria-item {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 40px;
+    border-radius: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    transition: transform 0.3s ease;
+    
+    /* Flexbox para items */
+    flex: 1 1 250px; /* grow, shrink, base */
+    min-width: 250px;
+    max-width: 350px;
+}
+
+.galeria-item:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+/* Media Query para tablets */
+@media (max-width: 768px) {
+    .galeria-item {
+        flex: 1 1 200px;
+        min-width: 200px;
+    }
+}
+
+/* Media Query para móviles */
+@media (max-width: 480px) {
+    .galeria-container {
+        gap: 10px;
+        padding: 10px;
+    }
+    
+    .galeria-item {
+        flex: 1 1 100%;
+        min-width: 100%;
+        max-width: 100%;
+    }
+}</code></pre>
+                        </div>
+
+                        <div class="explicacion">
+                            <h6>🔍 Conceptos de Flexbox:</h6>
+                            <ul>
+                                <li><strong>display: flex:</strong> Activa el contenedor flexible</li>
+                                <li><strong>flex-wrap: wrap:</strong> Permite que los items pasen a la siguiente línea</li>
+                                <li><strong>gap:</strong> Espacio entre items sin usar márgenes</li>
+                                <li><strong>flex: 1 1 250px:</strong> flex-grow, flex-shrink, flex-basis</li>
+                                <li><strong>@media:</strong> Consultas de medios para diseño responsivo</li>
+                                <li><strong>justify-content:</strong> Alinea items en el eje principal</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- JavaScript -->
+            <div class="tab-pane fade" id="js" role="tabpanel">
+                <h2 class="mb-4">⚡ Ejercicios de JavaScript</h2>
+
+                <!-- Ejercicio JS 1 -->
+                <div class="ejercicio-card">
+                    <div class="ejercicio-header">
+                        <span class="nivel-badge basico">BÁSICO</span>
+                        <span class="tech-tag js-tag">JavaScript</span>
+                        <h4 class="d-inline ms-2">Ejercicio 1: Calculadora Simple</h4>
+                    </div>
+                    <div class="ejercicio-body">
+                        <h5>📋 Objetivo:</h5>
+                        <p>Crear una calculadora que realice operaciones básicas con validación de entrada.</p>
+                        
+                        <div class="codigo-seccion">
+                            <h6>HTML:</h6>
+                            <pre><code class="language-html">&lt;div class="calculadora"&gt;
+    &lt;input type="number" id="num1" placeholder="Número 1"&gt;
+    &lt;select id="operacion"&gt;
+        &lt;option value="suma"&gt;+&lt;/option&gt;
+        &lt;option value="resta"&gt;-&lt;/option&gt;
+        &lt;option value="multiplicacion"&gt;×&lt;/option&gt;
+        &lt;option value="division"&gt;÷&lt;/option&gt;
+    &lt;/select&gt;
+    &lt;input type="number" id="num2" placeholder="Número 2"&gt;
+    &lt;button onclick="calcular()"&gt;Calcular&lt;/button&gt;
+    &lt;div id="resultado"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+
+                        <div class="codigo-seccion">
+                            <h6>✅ JavaScript:</h6>
+                            <pre><code class="language-javascript">function calcular() {
+    // Obtener valores de los inputs
+    const num1 = parseFloat(document.getElementById('num1').value);
+    const num2 = parseFloat(document.getElementById('num2').value);
+    const operacion = document.getElementById('operacion').value;
+    const resultadoDiv = document.getElementById('resultado');
+    
+    // Validar que los números sean válidos
+    if (isNaN(num1) || isNaN(num2)) {
+        resultadoDiv.innerHTML = '❌ Por favor ingrese números válidos';
+        resultadoDiv.style.color = 'red';
+        return;
+    }
+    
+    let resultado;
+    
+    // Realizar la operación según la selección
+    switch(operacion) {
+        case 'suma':
+            resultado = num1 + num2;
+            break;
+        case 'resta':
+            resultado = num1 - num2;
+            break;
+        case 'multiplicacion':
+            resultado = num1 * num2;
+            break;
+        case 'division':
+            if (num2 === 0) {
+                resultadoDiv.innerHTML = '❌ No se puede dividir por cero';
+                resultadoDiv.style.color = 'red';
+                return;
+            }
+            resultado = num1 / num2;
+            break;
+        default:
+            resultadoDiv.innerHTML = '❌ Operación no válida';
+            return;
+    }
+    
+    // Mostrar el resultado
+    resultadoDiv.innerHTML = `✅ Resultado: ${resultado.toFixed(2)}`;
+    resultadoDiv.style.color = 'green';
+    resultadoDiv.style.fontSize = '1.5em';
+    resultadoDiv.style.fontWeight = 'bold';
+}
+
+// Alternativa usando objetos para las operaciones (más elegante)
+const operaciones = {
+    suma: (a, b) => a + b,
+    resta: (a, b) => a - b,
+    multiplicacion: (a, b) => a * b,
+    division: (a, b) => a / b
+};
+
+function calcularV2() {
+    const num1 = parseFloat(document.getElementById('num1').value);
+    const num2 = parseFloat(document.getElementById('num2').value);
+    const operacion = document.getElementById('operacion').value;
+    const resultadoDiv = document.getElementById('resultado');
+    
+    if (isNaN(num1) || isNaN(num2)) {
+        mostrarError('Por favor ingrese números válidos');
+        return;
+    }
+    
+    if (operacion === 'division' && num2 === 0) {
+        mostrarError('No se puede dividir por cero');
+        return;
+    }
+    
+    const resultado = operaciones[operacion](num1, num2);
+    mostrarResultado(resultado);
+}
+
+function mostrarError(mensaje) {
+    const resultadoDiv = document.getElementById('resultado');
+    resultadoDiv.innerHTML = `❌ ${mensaje}`;
+    resultadoDiv.style.color = 'red';
+}
+
+function mostrarResultado(resultado) {
+    const resultadoDiv = document.getElementById('resultado');
+    resultadoDiv.innerHTML = `✅ Resultado: ${resultado.toFixed(2)}`;
+    resultadoDiv.style.color = 'green';
+}</code></pre>
+                        </div>
+
+                        <div class="explicacion">
+                            <h6>🔍 Concept
