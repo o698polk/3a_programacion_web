@@ -1,0 +1,14 @@
+
+.panel_datos{
+    background-color: aquamarine;
+    border-radius: 20px;
+    border:solid 3px black;
+    width: 350px;
+}
+
+#imagen_perfil {
+    width: 70px;
+    height: 70px;
+    border-radius: 100px;
+    border: solid 3px;
+}
