@@ -1,0 +1,15 @@
+.panel_datos {
+    background-color: aquamarine;
+    border-radius: 20px;
+    border: solid 3px black;
+    width: 350px;
+    padding: 15px;
+}
+
+#perfil_de_imagen {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    border: solid 3px black;
+}
+
