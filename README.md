@@ -160,6 +160,6 @@ Instituto Superior Tecnológico Alberto Enríquez
 
 ********************************LINK DE PAGINAS PARA CV Y OFERTAS LABORALES *********************************************
 
-<a href="https://encuentraempleo.trabajo.gob.ec/" target"_blank">SOCIO EMPLEO<a>
-<a href="https://www.linkedin.com/" target"_blank">LIKEDIN<a>
-<a href="https://capacitateparaelempleo.org/" target"_blank">CAPACITATE PARA EL EMPLEO<a>
+<a href="https://encuentraempleo.trabajo.gob.ec/" target"_blank">SOCIO EMPLEO</a>
+<a href="https://www.linkedin.com/" target"_blank">LIKEDIN</a>
+<a href="https://capacitateparaelempleo.org/" target"_blank">CAPACITATE PARA EL EMPLEO</a>
