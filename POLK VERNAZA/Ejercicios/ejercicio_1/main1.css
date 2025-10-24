@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Sofia", sans-serif;
+  }
+.text_incial{
+    text-align: center;
+    color: #000000;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.section_perfil{
+    background: #75cf67;
+    background: linear-gradient(90deg,rgba(117, 207, 103, 1) 1%, rgba(184, 213, 233, 1) 54%, rgba(255, 255, 255, 1) 100%, rgba(224, 224, 224, 1) 100%);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    width: 500px;
+    height: 500px;
+    border:solid 2px rgb(0, 0, 0);
+}
+.logo_perfil{
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    border:solid 2px rgb(33, 31, 31);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    
+}
+.datos_perfil{
+    display: flex;
+    flex-direction: column;
+    align-items: justify;
+    justify-content: justify;
+    gap: 10px;
+    font-size: 1.2rem;
+    color: #000000;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    background-color: rgb(183, 185, 187);
+    padding: 10px;
+    border-radius: 10px;
+  
+}
