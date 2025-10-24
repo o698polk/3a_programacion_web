@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de tareas pendientes</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/bootstrap-5.3.8-dist/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container cont_todolist">
+    <h1 class="text-center mt-3">LISTA DE ACTIVIDADES</h1>
+
+    <div class="row mt-4">
+      <div class="col-md-6">
+        <h2 class="text-center">Agregar actividad</h2>
+        <form>
+          <div class="mb-3">
+            <label for="nombre_actividad" class="form-label">Nombre de la actividad</label>
+            <input type="text" class="form-control" id="nombre_actividad" placeholder="Ingrese nombre">
+          </div>
+
+          <div class="mb-3">
+            <label for="prioridad" class="form-label">Prioridad</label>
+            <select class="form-select" id="prioridad">
+              <option value="">Seleccione</option>
+              <option value="Alta">Alta</option>
+              <option value="Media">Media</option>
+              <option value="Baja">Baja</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label for="estado" class="form-label">Estado</label>
+            <select class="form-select" id="estado">
+              <option value="">Seleccione</option>
+              <option value="Pendiente">Pendiente</option>
+              <option value="En proceso">En proceso</option>
+              <option value="Completado">Completado</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label for="fecha" class="form-label">Fecha de creación</label>
+            <input type="date" class="form-control" id="fecha">
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100">Guardar</button>
+        </form>
+      </div>
+      <div class="col-md-6">
+        <h2 class="text-center">Lista de actividades</h2>
+
+        <table class="table table-bordered table-striped mt-3">
+          <thead class="table-dark">
+            <tr>
+              <th>#</th>
+              <th>Nombre</th>
+              <th>Prioridad</th>
+              <th>Estado</th>
+              <th>Fecha</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Ejemplo tarea</td>
+              <td>Alta</td>
+              <td>Pendiente</td>
+              <td>2025-10-24</td>
+              <td>
+                <button class="btn btn-warning btn-sm">Editar</button>
+                <button class="btn btn-danger btn-sm">Eliminar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="css/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
