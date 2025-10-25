@@ -1,0 +1,58 @@
+<head>
+    <link rel="stylesheet" href="css/validador_F.css">
+    <script src="js/ejercicio4.js" defer></script>
+    <body>
+        <div class="form-container">
+            <div class="form-header">
+                <h2>Crear Cuenta</h2>
+                <p>Únete a nuestra comunidad</p>
+            </div>
+            
+            <div class="form-body">
+                <form id="formularioRegistro" onsubmit="return validarFormulario(event)">
+                    <div class="form-group">
+                        <label for="usuario">Usuario:</label>
+                        <div class="input-group">
+                            <span class="input-icon">👤</span>
+                            <input type="text" id="usuario" name="usuario" placeholder="Ingresa tu nombre de usuario">
+                        </div>
+                        <span class="error" id="errorUsuario"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <div class="input-group">
+                            <span class="input-icon">📧</span>
+                            <input type="email" id="email" name="email" placeholder="ejemplo@correo.com">
+                        </div>
+                        <span class="error" id="errorEmail"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Contraseña:</label>
+                        <div class="input-group">
+                            <span class="input-icon">🔒</span>
+                            <input type="password" id="password" name="password" placeholder="Crea una contraseña segura">
+                            <button type="button" class="password-toggle" id="togglePassword">👁️</button>
+                        </div>
+                        <span class="error" id="errorPassword"></span>
+                        <div class="password-strength" id="passwordStrength"></div>
+                        <div class="form-text">
+                            La contraseña debe tener al menos 8 caracteres, incluyendo mayúsculas, minúsculas y números.
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="confirmarPassword">Confirmar Contraseña:</label>
+                        <div class="input-group">
+                            <span class="input-icon">🔐</span>
+                            <input type="password" id="confirmarPassword" name="confirmarPassword" placeholder="Repite tu contraseña">
+                        </div>
+                        <span class="error" id="errorConfirmar"></span>
+                    </div>
+                    
+                    <button type="submit">Registrarse</button>
+                </form>
+            </div>
+        </div>
+</head>
