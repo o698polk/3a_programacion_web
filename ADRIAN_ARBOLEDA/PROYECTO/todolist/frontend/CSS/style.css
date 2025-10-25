@@ -16,11 +16,12 @@ scrollbar-width: thin;
 }
 .fomulario_actividad{
     background-color: #ffffff;
-    color: #f5f5f5;
+    color: #050505;
     padding: 10px 10px;
     margin: 10px auto;
     max-width: 400px;
     min-height: auto;
+    border-radius: 5px;
     
     /* Efecto de hoja de papel */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1),
@@ -38,6 +39,7 @@ scrollbar-width: thin;
 .fomulario_actividad p {
     margin-bottom: 20px;
     text-align: justify;
+    border-radius: 5px;
 }
 
 .fomulario_actividad strong {
