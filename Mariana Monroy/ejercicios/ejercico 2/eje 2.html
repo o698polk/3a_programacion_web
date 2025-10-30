@@ -1,0 +1,124 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Registro</title>
+    <style>
+        /* Estilo general de la página */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+    margin: 40px;
+    color: #333;
+}
+
+/* Título del catálogo */
+caption {
+    caption-side: top;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #ad1457;
+    text-shadow: 1px 1px 2px #c70f4c;
+}
+
+/* Estilo general de la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 4px 12px rgba(110, 154, 219, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Cabecera de la tabla en color rosa */
+thead th {
+    background-color: #ec407a; /* Rosa fuerte */
+    color: white;
+    padding: 12px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+/* Celdas del cuerpo */
+tbody td {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #f8bbd0;
+    font-size: 0.95rem;
+}
+
+/* Filas alternadas */
+tbody tr:nth-child(even) {
+    background-color: #fce4ec;
+}
+
+/* Efecto hover */
+tbody tr:hover {
+    background-color: #f8bbd0;
+    transition: 0.3s;
+}
+
+/* Pie de tabla */
+tfoot td {
+    background-color: #ec407a;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Bordes */
+table, th, td {
+    border: 1px solid #f48fb1;
+}
+
+/* Alineación vertical */
+th[rowspan], td[rowspan] {
+    vertical-align: middle;
+}
+    </style>
+</head>
+<table border="3" style="border-collapse: collapse; width: 100%;">
+    <caption>Catálogo de Productos - Q4 2025</caption>
+    <thead>
+        <tr>
+            <th rowspan="2">ID</th>
+            <th rowspan="2">Producto</th>
+            <th colspan="2">Precio</th>
+            <th rowspan="2">Stock</th>
+        </tr>
+        <tr>
+            <th>Normal</th>
+            <th>Descuento</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>001</td>
+            <td>Laptop HP</td>
+            <td>$800</td>
+            <td>$720</td>
+            <td>15</td>
+        </tr>
+        <tr>
+            <td>002</td>
+            <td>Mouse Logitech</td>
+            <td>$25</td>
+            <td>$20</td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td>003</td>
+            <td>Teclado Mecánico</td>
+            <td>$120</td>
+            <td>$100</td>
+            <td>30</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="4"><strong>Total de productos:</strong></td>
+            <td><strong>95</strong></td>
+        </tr>
+    </tfoot>
+</table>
