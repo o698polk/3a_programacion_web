@@ -1,5 +1,5 @@
 <?php 
-include '../query/consultas.php';
+include '../query/complemte.php';
 
 // Asegurar que la respuesta sea JSON
 header('Content-Type: application/json');
@@ -22,12 +22,16 @@ class endpoint{
         } else if($_SERVER['REQUEST_METHOD'] == 'POST')
         {
             if(isset($_POST['crear_actividad_postmethod'])){
-                echo consultas::crearActividad($_POST['actividad'], $_POST['descripcion'], $_POST['estado']);
+                echo consultas::crearActividad($_POST['actividad'], $_POST['descripcion'], $_POST['estado'], $_POST['tipo']);
             } else if(isset($_POST['editar_actividad_postmethod'])){
-                echo consultas::editarActividad($_POST['id'], $_POST['actividad'], $_POST['descripcion'], $_POST['estado']);
-            } else {
-                echo json_encode(['error' => 'Parámetro no válido']);
+                echo consultas::editarActividad($_POST['id'], $_POST['actividad'], $_POST['descripcion'], $_POST['estado'], $_POST['tipo']);
+            }  else if(isset($_POST['login_usuario_postmethod'])){
+                echo user::loginUsuario($_POST['email'], $_POST['password']);
             }
+             else {
+                echo json_encode(['error' => 'Parámetro no válido']);
+             }
+          
         } 
         else if($_SERVER['REQUEST_METHOD'] == 'DELETE')
         {
@@ -43,6 +47,7 @@ class endpoint{
             echo json_encode(['error' => 'Método no permitido']);
         } 
     }
+    
 }
 
 endpoint::EndpointController();

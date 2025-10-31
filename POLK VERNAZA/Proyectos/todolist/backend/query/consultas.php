@@ -1,5 +1,5 @@
 <?php 
-include '../dbconexion/dbconexion.php';
+
 class consultas{
 
  //FUNCION MOSTRAR ACTIVIDADES
@@ -12,13 +12,14 @@ class consultas{
     }
 
     //FUNCION CREAR ACTIVIDAD
-    public static function crearActividad($actividad, $descripcion, $estado){
+    public static function crearActividad($actividad, $descripcion, $estado, $tipo){
       $conn=dbconexion::conectar();
-      $query="INSERT INTO actividades (actividad, descripcion, estado) VALUES (?, ?, ?)";
+      $query="INSERT INTO actividades (actividad, descripcion, estado, tipo) VALUES (?, ?, ?, ?)";
       $stmt=$conn->prepare($query);
       $stmt->bindParam(1, $actividad);
       $stmt->bindParam(2, $descripcion);
       $stmt->bindParam(3, $estado);
+      $stmt->bindParam(4, $tipo);
       $stmt->execute();
       if($stmt->rowCount() > 0){
         return json_encode(['success' => true, 'message' => 'Actividad creada correctamente']);
@@ -42,14 +43,15 @@ class consultas{
     }
 
     //FUNCION EDITAR ACTIVIDAD
-    public static function editarActividad($id, $actividad, $descripcion, $estado){
+    public static function editarActividad($id, $actividad, $descripcion, $estado, $tipo){
       $conn=dbconexion::conectar();
-      $query="UPDATE actividades SET actividad=?, descripcion=?, estado=? WHERE id=?";
+      $query="UPDATE actividades SET actividad=?, descripcion=?, estado=?, tipo=? WHERE id=?";
       $stmt=$conn->prepare($query);
       $stmt->bindParam(1, $actividad);
       $stmt->bindParam(2, $descripcion);
       $stmt->bindParam(3, $estado);
-      $stmt->bindParam(4, $id);
+      $stmt->bindParam(4, $tipo);
+      $stmt->bindParam(5, $id);
       $stmt->execute();
       if($stmt->rowCount() > 0){
         return json_encode(['success' => true, 'message' => 'Actividad actualizada correctamente']);

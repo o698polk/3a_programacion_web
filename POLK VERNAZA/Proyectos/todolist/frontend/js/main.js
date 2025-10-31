@@ -14,7 +14,7 @@ function EliminarActividad(){
     }).then((result) => {
       if (result.isConfirmed) {
         $.ajax({
-          url: '../backend/api/endpoint.php',
+          url: '../../../backend/api/endpoint.php',
           type: 'DELETE',
           dataType: 'json',
           data: {
@@ -62,7 +62,7 @@ function CrearActividad(){
    $('#formulario_crear_actividad').submit(function(e){
      e.preventDefault();
    $.ajax({
-     url: '../backend/api/endpoint.php',
+     url: '../../../backend/api/endpoint.php',
      type: 'POST',
      dataType: 'json',
      data: {
@@ -70,6 +70,7 @@ function CrearActividad(){
        actividad: $('#actividad').val(),
        descripcion: $('#descripcion').val(),
        estado: $('#estado').val(),
+       tipo: $('#tipo').val(),
      },
      success: function(data){
        console.log(data);
@@ -126,7 +127,7 @@ function EditarActividad(){
 
   // Cargar los datos de la actividad
   $.ajax({
-    url: '../backend/api/endpoint.php',
+    url: '../../../backend/api/endpoint.php',
     type: 'GET',
     dataType: 'json',
     data: {
@@ -141,6 +142,7 @@ function EditarActividad(){
         $('#actividad').val(actividad.actividad);
         $('#descripcion').val(actividad.descripcion);
         $('#estado').val(actividad.estado);
+        $('#tipo').val(actividad.tipo);
       } else {
         Swal.fire({
           icon: 'error',
@@ -167,7 +169,7 @@ function EditarActividad(){
   $('#formulario_editar_actividad').submit(function(e){
     e.preventDefault();
     $.ajax({
-      url: '../backend/api/endpoint.php',
+      url: '../../../backend/api/endpoint.php',
       type: 'POST',
       dataType: 'json',
       data: {
@@ -176,6 +178,7 @@ function EditarActividad(){
         actividad: $('#actividad').val(),
         descripcion: $('#descripcion').val(),
         estado: $('#estado').val(),
+        tipo: $('#tipo').val(),
       },
       success: function(data){
         console.log(data);
@@ -230,7 +233,7 @@ function VerActividad(){
 
   // Cargar los datos de la actividad
   $.ajax({
-    url: '../backend/api/endpoint.php',
+    url: '../../../backend/api/endpoint.php',
     type: 'GET',
     dataType: 'json',
     data: {
@@ -246,20 +249,9 @@ function VerActividad(){
         
         // Convertir el estado numérico a texto
         let estadoTexto = '';
-        switch(actividad.estado){
-          case '0':
-            estadoTexto = 'Pendiente';
-            break;
-          case '1':
-            estadoTexto = 'Completado';
-            break;
-          case '2':
-            estadoTexto = 'En progreso';
-            break;
-          default:
-            estadoTexto = 'Desconocido';
-        }
-        $('#estado').text(estadoTexto);
+    
+        $('#estado').text(actividad.estado);
+        $('#tipo').text(actividad.tipo);
         $('#fecha_creacion').text(actividad.fecha_de_creacion);
         $('#fecha_actualizacion').text(actividad.fecha_de_actualizacion);
       } else {
@@ -307,7 +299,7 @@ function CargarActividadParaEliminar(){
 
   // Cargar los datos de la actividad
   $.ajax({
-    url: '../backend/api/endpoint.php',
+    url: '../../../backend/api/endpoint.php',
     type: 'GET',
     dataType: 'json',
     data: {
@@ -323,20 +315,8 @@ function CargarActividadParaEliminar(){
         
         // Convertir el estado numérico a texto
         let estadoTexto = '';
-        switch(actividad.estado){
-          case '0':
-            estadoTexto = 'Pendiente';
-            break;
-          case '1':
-            estadoTexto = 'Completado';
-            break;
-          case '2':
-            estadoTexto = 'En progreso';
-            break;
-          default:
-            estadoTexto = 'Desconocido';
-        }
-        $('#estado').text(estadoTexto);
+    
+        $('#estado').text(actividad.estado);
         $('#fecha_creacion').text(actividad.fecha_de_creacion);
         $('#fecha_actualizacion').text(actividad.fecha_de_actualizacion);
       } else {
@@ -365,7 +345,7 @@ function CargarActividadParaEliminar(){
 function MostrarActividad(){
  
       $.ajax({
-        url: '../backend/api/endpoint.php',
+        url: '../../../backend/api/endpoint.php',
         type: 'GET',
         dataType: 'json',
         data: {
@@ -378,28 +358,18 @@ function MostrarActividad(){
           data.forEach(element => {
             // Convertir el estado numérico a texto
             let estadoTexto = '';
-            switch(element.estado){
-              case '0':
-                estadoTexto = 'Pendiente';
-                break;
-              case '1':
-                estadoTexto = 'Completado';
-                break;
-              case '2':
-                estadoTexto = 'En progreso';
-                break;
-              default:
-                estadoTexto = 'Desconocido';
-            }
+          
             
             tbody.innerHTML += `
             <tr>
               <td>${element.id}</td>
               <td>${element.actividad}</td>
               <td>${element.descripcion}</td>
-              <td>${estadoTexto}</td>
+              <td>${element.estado}</td>
+              <td>${element.tipo}</td>
               <td>${element.fecha_de_creacion}</td>
               <td>${element.fecha_de_actualizacion}</td>
+              <td><a href="descargar_actividad.html?id=${element.id}" class="btn btn-info">Descargar</a></td>
               <td><a href="ver_actividad.html?id=${element.id}" class="btn btn-info">Ver</a></td>
               <td><a href="editar_actividad.html?id=${element.id}" class="btn btn-warning">Editar</a></td>
               <td><a href="eliminar_actividad.html?id=${element.id}" class="btn btn-danger">Eliminar</a></td>
@@ -418,3 +388,26 @@ function MostrarActividad(){
         }
       });
    }
+
+function ImprimirActividad(){
+  // Agregar evento al botón de descargar
+  $('#descargar_actividad').click(function(e){
+    e.preventDefault();
+    
+    // Obtener el contenido del div a imprimir
+    const contenidoOriginal = document.body.innerHTML;
+    const contenidoImprimir = document.getElementById('DescargarActividad').innerHTML;
+    
+    // Guardar el contenido original y reemplazar con el contenido a imprimir
+    document.body.innerHTML = contenidoImprimir;
+    
+    // Imprimir
+    window.print();
+    
+    // Restaurar el contenido original
+    document.body.innerHTML = contenidoOriginal;
+    
+    // Recargar la página para restaurar los eventos
+    location.reload();
+  });
+}
