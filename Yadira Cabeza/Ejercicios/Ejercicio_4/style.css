@@ -1,26 +1,26 @@
 /* Estilos generales */
 body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #0fe951, #68f5fa);
+    font-family: 'Poppins', 'Times New Roman', Times, serif;
+    background: linear-gradient(135deg, #a3f0ba, #68f5fa);
     margin: 0;
     padding: 0;
-    height: 100vh;
+    height: 80vh;
 }
 
 /* Contenedor principal */
 .todo-app {
     background: #ffffff;
-    width: 350px;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-    margin-top: 80px;
+    width: 450px;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgb(110, 110, 110);
+    margin-top: 50px;
 }
 
 /* Título */
 .todo-app h2 {
     text-align: center;
-    color: #2d3436;
+    color: #000000;
     margin-bottom: 20px;
 }
 
@@ -46,8 +46,8 @@ body {
 
 /* Botón */
 .input-container button {
-    background: #0984e3;
-    color: white;
+    background: #ffffff;
+    color: rgb(0, 0, 0);
     border: none;
     border-radius: 10px;
     padding: 10px 15px;
@@ -56,7 +56,7 @@ body {
 }
 
 .input-container button:hover {
-    background: #74b9ff;
+    background: #0bffff67;
 }
 
 /* Lista de tareas */
@@ -86,8 +86,8 @@ ul li:hover {
 /* Tareas completadas */
 ul li.completed {
     text-decoration: line-through;
-    color: #636e72;
-    background: #b2bec3;
+    color: #637172;
+    background: #b2c3c0;
 }
 
 /* Contador */
