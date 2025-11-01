@@ -1,88 +1,108 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lista de tareas pendientes</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/bootstrap-5.3.8-dist/css/bootstrap.min.css">
+<head>  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="css/bootstrap-5.3.8-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+    <style>
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            min-height: 100vh;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        h1 {
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #007bff;
+        }
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+            max-width: 1200px;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            font-weight: 600;
+            transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+            border-radius: 0.3rem;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        table {
+            margin-top: 20px;
+            border-collapse: separate;
+            border-spacing: 0;
+            width: 100%;
+        }
+
+        thead {
+            background-color: #e9ecef;
+            color: #495057;
+        }
+
+        th, td {
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        tbody tr:hover {
+            background-color: #f8f9fa;
+        }
+    </style>
 </head>
 
 <body>
-  <div class="container cont_todolist">
-    <h1 class="text-center mt-3">LISTA DE ACTIVIDADES</h1>
+    <div class="container">
+        <h1>📋 LISTA DE ACTIVIDADES</h1>
+        <div class="text-end mb-3">
+            <a href="crear_actividad.html" class="btn btn-primary">➕ Agregar Actividad</a>
+        </div>
 
-    <div class="row mt-4">
-      <div class="col-md-6">
-        <h2 class="text-center">Agregar actividad</h2>
-        <form>
-          <div class="mb-3">
-            <label for="nombre_actividad" class="form-label">Nombre de la actividad</label>
-            <input type="text" class="form-control" id="nombre_actividad" placeholder="Ingrese nombre">
-          </div>
-
-          <div class="mb-3">
-            <label for="prioridad" class="form-label">Prioridad</label>
-            <select class="form-select" id="prioridad">
-              <option value="">Seleccione</option>
-              <option value="Alta">Alta</option>
-              <option value="Media">Media</option>
-              <option value="Baja">Baja</option>
-            </select>
-          </div>
-
-          <div class="mb-3">
-            <label for="estado" class="form-label">Estado</label>
-            <select class="form-select" id="estado">
-              <option value="">Seleccione</option>
-              <option value="Pendiente">Pendiente</option>
-              <option value="En proceso">En proceso</option>
-              <option value="Completado">Completado</option>
-            </select>
-          </div>
-
-          <div class="mb-3">
-            <label for="fecha" class="form-label">Fecha de creación</label>
-            <input type="date" class="form-control" id="fecha">
-          </div>
-
-          <button type="submit" class="btn btn-primary w-100">Guardar</button>
-        </form>
-      </div>
-      <div class="col-md-6">
-        <h2 class="text-center">Lista de actividades</h2>
-
-        <table class="table table-bordered table-striped mt-3">
-          <thead class="table-dark">
-            <tr>
-              <th>#</th>
-              <th>Nombre</th>
-              <th>Prioridad</th>
-              <th>Estado</th>
-              <th>Fecha</th>
-              <th>Acciones</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Ejemplo tarea</td>
-              <td>Alta</td>
-              <td>Pendiente</td>
-              <td>2025-10-24</td>
-              <td>
-                <button class="btn btn-warning btn-sm">Editar</button>
-                <button class="btn btn-danger btn-sm">Eliminar</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+        <div class="table-responsive">
+            <table class="table table-hover align-middle text-center">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Actividad</th>
+                        <th>Descripción</th>
+                        <th>Observación</th>
+                        <th>Estado</th>
+                        <th>Creación</th>
+                        <th>Actualización</th>
+                        <th>Ver</th>
+                        <th>Editar</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
     </div>
-  </div>
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="css/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="css/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            MostrarActividad();
+        });
+    </script>
 </body>
 </html>
