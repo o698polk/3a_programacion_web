@@ -4,7 +4,7 @@ $edad= "29 AÑOS";
 $imagen= "Img/IMG_20250805.jpg";
 $cedula= "1050480000";
 $celular= "0988630000";
-$correo= "yadicabeza12.96@gmail.com"
+$correo= "yadicabeza00000@gmail.com"
 ?>
 
 <html>
@@ -23,7 +23,7 @@ $correo= "yadicabeza12.96@gmail.com"
 <p> <strong> CEDULA: </strong><?php echo $cedula ?></p><br>
 <p> <strong> CELULAR: </strong><?php echo $celular ?></p><br>
 <p> <strong> CORREO: </strong><?php echo $correo ?></p><br>
-<button id="boton_saludar" onclick="alert('HOLA <?php echo $nombre ?>, BIENVENIDA A LA PROGRAMACIÓN WEB')">SALUDAR</button>
+<button id="boton_saludar" onclick="alert('HOLA, BIENVENIDO A LA PROGRAMACIÓN WEB')">SALUDAR</button>
 </div>
 </center>
 </body>
