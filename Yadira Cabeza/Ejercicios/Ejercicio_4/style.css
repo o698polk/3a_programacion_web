@@ -1,0 +1,99 @@
+/* Estilos generales */
+body {
+    font-family: 'Poppins', 'Times New Roman', Times, serif;
+    background: linear-gradient(135deg, #a3f0ba, #68f5fa);
+    margin: 0;
+    padding: 0;
+    height: 80vh;
+}
+
+/* Contenedor principal */
+.todo-app {
+    background: #ffffff;
+    width: 450px;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgb(110, 110, 110);
+    margin-top: 50px;
+}
+
+/* Título */
+.todo-app h2 {
+    text-align: center;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+/* Contenedor de entrada */
+.input-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #dfe6e9;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+/* Campo de texto */
+.input-container input {
+    border: none;
+    background: transparent;
+    outline: none;
+    flex: 1;
+    padding: 10px;
+    font-size: 14px;
+}
+
+/* Botón */
+.input-container button {
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 10px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.input-container button:hover {
+    background: #0bffff67;
+}
+
+/* Lista de tareas */
+ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+ul li {
+    background: #f1f2f6;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+ul li:hover {
+    background: #dfe6e9;
+}
+
+/* Tareas completadas */
+ul li.completed {
+    text-decoration: line-through;
+    color: #637172;
+    background: #b2c3c0;
+}
+
+/* Contador */
+#contador {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+    color: #2d3436;
+}

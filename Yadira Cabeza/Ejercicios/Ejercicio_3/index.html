@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Registro</title>
+    
+    <style>
+        /* Estilos para la tabla */
+table {
+    border: 3px solid #b3ff01;
+    border-collapse: collapse;
+    width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 2rem 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    background: white;
+}
+
+/* Caption */
+caption {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #eafa05;
+    padding: 1rem;
+    background: linear-gradient(135deg, #01767a, #06afaf);
+    color: white;
+    margin-bottom: 0;
+}
+
+/* Cabecera de la tabla */
+thead {
+    background: linear-gradient(135deg, #7cffed, #00a388);
+    color: white;
+}
+
+thead th {
+    padding: 1rem 0.5rem;
+    text-align: center;
+    font-weight: 600;
+    border: 1px solid #000000;
+    position: relative;
+}
+
+/* Filas del cuerpo */
+tbody tr {
+    transition: all 0.3s ease;
+    border-bottom: 1px solid #ecf0f1;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+tbody tr:hover {
+    background-color: #e3f2fd;
+    transform: scale(1.01);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Celdas */
+td {
+    padding: 0.8rem 0.5rem;
+    text-align: center;
+    border: 1px solid #bdc3c7;
+    transition: all 0.2s ease;
+}
+
+/* Estilos específicos para columnas */
+td:first-child { /* ID */
+    font-weight: bold;
+    color: #000000;
+    background-color: #fdf2f2;
+}
+
+td:nth-child(2) { /* Producto */
+    text-align: left;
+    font-weight: 500;
+    color: #000000;
+}
+
+td:nth-child(3) { /* Precio Normal */
+    color: #505050;
+    text-decoration: line-through;
+    font-weight: 500;
+}
+
+td:nth-child(4) { /* Precio Descuento */
+    color: #27ae60;
+    font-weight: bold;
+    font-size: 1.1em;
+    background-color: #f0f9f4;
+}
+
+td:nth-child(5) { /* Stock */
+    font-weight: 600;
+    color: #2980b9;
+}
+
+/* Pie de tabla */
+tfoot {
+    background: linear-gradient(135deg, #23f3d7, #3ea38d);
+    color: rgb(206, 235, 233);
+    font-weight: bold;
+}
+
+tfoot td {
+    padding: 1rem 0.5rem;
+    border: 1px solid #95a5a6;
+    font-size: 1.1em;
+}
+
+tfoot td:last-child {
+    background-color: rgba(255, 255, 255, 0.2);
+    font-size: 1.2em;
+}
+
+/* Bordes y esquinas redondeadas */
+table tr:first-child th:first-child {
+    border-top-left-radius: 8px;
+}
+
+table tr:first-child th:last-child {
+    border-top-right-radius: 8px;
+}
+
+table tr:last-child td:first-child {
+    border-bottom-left-radius: 8px;
+}
+
+table tr:last-child td:last-child {
+    border-bottom-right-radius: 8px;
+}
+
+/* Efectos de hover para celdas */
+td:hover {
+    background-color: #d6eaf8 !important;
+    transform: scale(1.05);
+    z-index: 1;
+    position: relative;
+}
+
+/* Estilos para los encabezados de precio */
+thead tr:last-child th {
+    background: rgba(52, 73, 94, 0.9);
+    font-size: 0.9em;
+    padding: 0.7rem 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    table {
+        font-size: 0.9rem;
+    }
+    
+    caption {
+        font-size: 1.2rem;
+        padding: 0.8rem;
+    }
+    
+    td, th {
+        padding: 0.6rem 0.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    table {
+        font-size: 0.8rem;
+    }
+    
+    caption {
+        font-size: 1rem;
+    }
+    
+    td, th {
+        padding: 0.4rem 0.2rem;
+    }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+tbody tr {
+    animation: fadeIn 0.5s ease-out;
+}
+
+tbody tr:nth-child(1) { animation-delay: 0.1s; }
+tbody tr:nth-child(2) { animation-delay: 0.2s; }
+tbody tr:nth-child(3) { animation-delay: 0.3s; }
+
+/* Estilos para el borde de la tabla */
+table {
+    border: 2px solid #34495e;
+}
+    </style>
+</head>
+<table border="3" style="border-collapse: collapse; width: 100%;">
+    <caption>Catálogo de Productos</caption>
+    <thead>
+        <tr>
+            <th rowspan="2">ID</th>
+            <th rowspan="2">Producto</th>
+            <th colspan="2">Precio</th>
+            <th rowspan="2">Stock</th>
+        </tr>
+        <tr>
+            <th>Normal</th>
+            <th>Descuento</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>001</td>
+            <td>CPU</td>
+            <td>$600</td>
+            <td>$560</td>
+            <td>11</td>
+        </tr>
+        <tr>
+            <td>002</td>
+            <td>Monitor</td>
+            <td>$325</td>
+            <td>$290</td>
+            <td>30</td>
+        </tr>
+        <tr>
+            <td>003</td>
+            <td>Teclado</td>
+            <td>$60</td>
+            <td>$50</td>
+            <td>15</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="4"><strong>Total de Productos:</strong></td>
+            <td><strong>95</strong></td>
+        </tr>
+    </tfoot>
+</table>
