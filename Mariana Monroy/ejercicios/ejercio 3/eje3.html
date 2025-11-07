@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Registro</title>
+
+    <style>
+        /* css/registros_UI.css */
+
+/* Reset y estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #187449;
+       min-height: 100vh;
+}
+
+/* Header */
+header {
+    background: rgba(50, 196, 176, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 10px #3eabbe;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    color: #000000;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #010c14;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+/* Main content */
+main {
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 140px);
+}
+/* Section_1 */
+section {
+    background: rgb(225, 241, 164);
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgb(9, 89, 155);
+    width: 100%;
+    max-width: 500px;
+}
+
+section h2 {
+    color: #000000;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* Form styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #000000;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="tel"],
+select {
+    padding: 0.75rem 1rem;
+    border: 2px solid #acf8a2;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #d0f37d;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+select:focus {
+    outline: none;
+    border-color: #669775;
+    background: rgb(81, 193, 212);
+}
+
+input[type="checkbox"] {
+    margin-right: 0.5rem;
+    transform: scale(1.1);
+}
+
+/* Checkbox container */
+form div:last-of-type {
+    flex-direction: row;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+form div:last-of-type label {
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+/* Button */
+button {
+    background: linear-gradient(135deg, #80d4f5 0%, #7ddaff 100%);
+    color: rgb(255, 255, 255);
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgb(110, 2, 56);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Footer */
+footer {
+    background: rgba(174, 227, 252, 0.9);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: auto;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    section {
+        padding: 2rem 1.5rem;
+    }
+
+    section h2 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    section {
+        padding: 1.5rem 1rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    select {
+        padding: 0.6rem 0.8rem;
+    }
+
+    button {
+        padding: 0.8rem 1.5rem;
+    }
+}
+
+/* Estilos para validación */
+input:invalid {
+    border-color: #4ac0b6;
+}
+
+input:valid {
+    border-color: #6df596;
+}
+
+/* Animaciones suaves */
+section {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+    </style>
+
+</head>
+<body>
+
+    <header>
+        <h1>Registro de Usuario</h1>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>COMPLETE SUS DATOS</h2>
+            <form action="procesar.php" method="POST">
+                <div>
+                    <label for="nombre">Nombre completo:</label>
+                    <input type="text" id="nombre" name="nombre" 
+                           required placeholder="Juan Pérez">
+                </div>
+
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" 
+                           required placeholder="usuario@email.com">
+                </div>
+
+                <div>
+                    <label for="edad">Edad:</label>
+                    <input type="number" id="edad" name="edad" 
+                           min="18" max="100" required>
+                </div>
+
+                <div>
+                    <label for="genero">Género:</label>
+                    <select id="genero" name="genero" required>
+                        <option value="">Seleccione...</option>
+                        <option value="masculino">Masculino</option>
+                        <option value="femenino">Femenino</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono" 
+                           required placeholder="(123) 456-7890">
+                </div>
+
+                <div>
+                    <label>
+                        <input type="checkbox" name="terminos" required>
+                        Acepto los términos y condiciones
+                    </label>
+                </div>
+
+                <button type="submit">Registrarse</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+           <p>© 2025 Mi Sitio Web. Mariana26</p>
+     </footer>
+</body>
+</html>

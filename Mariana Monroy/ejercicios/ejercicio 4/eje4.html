@@ -1,0 +1,99 @@
+<div class="todo-app">
+    <h2>Mi Lista de Tareas Pendientes</h2>
+    <div class="input-container">
+        <input type="text" id="tareaInput" placeholder="Escribe una tarea...">
+        <button onclick="agregarTarea()">Agregar</button>
+    </div>
+    <ul id="listaTareas"></ul>
+    <div id="contador">Tareas pendientes: 5</div>
+</div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tareas de Mariana</title>
+    <style>
+        .todo-app {
+            width: 300px;
+            margin: 50px auto;
+            background: #ffe6f2;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: Arial, sans-serif;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #45a9e2;
+        }
+        .input-container {
+            display: flex;
+            gap: 5px;
+        }
+        input {
+            flex: 1;
+            padding: 5px;
+        }
+        button {
+            background: #ff66b2;
+            border: none;
+            color: white;
+            padding: 6px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #d63384;
+        }
+        li {
+            background: white;
+            padding: 5px;
+            margin-top: 5px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+        }
+        #contador {
+            margin-top: 10px;
+            text-align: center;
+            color: #555;
+        }
+    </style>
+
+    <script>
+        function agregarTarea() {
+            const input = document.getElementById("tareaInput");
+            const lista = document.getElementById("listaTareas");
+            const contador = document.getElementById("contador");
+
+            const texto = input.value.trim();
+            if (texto === "") return alert("Escribe una tarea primero");
+
+            // Crear un nuevo elemento <li>
+            const li = document.createElement("li");
+            li.textContent = texto;
+
+            // Botón para eliminar la tarea
+            const btnEliminar = document.createElement("button");
+            btnEliminar.textContent = "❌";
+            btnEliminar.onclick = function() {
+                lista.removeChild(li);
+                actualizarContador();
+            };
+
+            li.appendChild(btnEliminar);
+            lista.appendChild(li);
+
+            input.value = ""; // limpiar el campo
+            actualizarContador();
+        }
+
+        function actualizarContador() {
+            const lista = document.getElementById("listaTareas");
+            const contador = document.getElementById("contador");
+            const tareas = lista.getElementsByTagName("li").length;
+            contador.textContent = "Tareas pendientes: " + tareas;
+            
+        }
+    </script>
+</body>
+</html>
