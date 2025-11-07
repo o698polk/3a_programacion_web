@@ -54,7 +54,7 @@ main {
 }
 /* Section_1 */
 section {
-    background: rgba(93, 255, 188, 0.774);
+    background: rgba(1, 255, 149, 0.336);
     padding: 2.5rem;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgb(0, 0, 0);
@@ -93,11 +93,11 @@ input[type="email"],
 input[type="number"],
 select {
     padding: 0.75rem 1rem;
-    border: 2px solid #0af0a3;
+    border: 2px solid #035528;
     border-radius: 8px;
     font-size: 1rem;
     transition: all 0.3s ease;
-    background: #80ffca;
+    background: #05d8fd00;
 }
 
 input[type="text"]:focus,
@@ -105,8 +105,8 @@ input[type="email"]:focus,
 input[type="number"]:focus,
 select:focus {
     outline: none;
-    border-color: #71f79e;
-    background: rgb(250, 250, 250);
+    border-color: #ffffff;
+    background: rgb(144, 236, 216);
 }
 
 input[type="checkbox"] {
@@ -129,7 +129,7 @@ form div:last-of-type label {
 /* Button */
 button {
     background: linear-gradient(135deg, #00e09d 0%, #005c4d 100%);
-    color: rgb(153, 245, 233);
+    color: rgb(0, 0, 0);
     padding: 1rem 2rem;
     border: none;
     border-radius: 8px;
@@ -142,7 +142,7 @@ button {
 
 button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgb(1, 206, 121);
+    box-shadow: 0 5px 15px rgb(255, 255, 255);
 }
 
 button:active {
@@ -151,8 +151,8 @@ button:active {
 
 /* Footer */
 footer {
-    background: rgba(6, 255, 172, 0.9);
-    color: rgb(0, 0, 0);
+    background: rgb(4, 97, 66);
+    color: rgb(253, 253, 253);
     text-align: center;
     padding: 1.5rem;
     margin-top: auto;
