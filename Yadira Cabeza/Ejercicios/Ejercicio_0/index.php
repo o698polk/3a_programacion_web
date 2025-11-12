@@ -1,11 +1,14 @@
 <?php
-$hora = date ("H");
 
-if ($hora <12) {
-    echo "¡Buenos dias!";
-    } elseif (hora <18) {
-        echo "¡Buenas tardes!";
-    } else {
-        echo "¡Buenas noches!";
-    }
+$hora = date("H");
+
+// Determinar el saludo según la hora
+if ($hora >= 6 && $hora < 12) {
+    $saludo = "¡Buenos días!";
+} elseif ($hora >= 12 && $hora < 18) {
+    $saludo = "¡Buenas tardes!";
+} elseif ($hora >= 18 && $hora < 24) {
+    $saludo = "¡Buenas noches!";
+} 
+echo $saludo;
 ?>
