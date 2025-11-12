@@ -1,6 +1,11 @@
 <?php
-// index.php - Nombre: TuNombre
-echo "<!doctype html>";
-echo "<html lang='es'><head><meta charset='utf-8'><title>Index</title></head><body><h1>Hola Yadira</h1></body></html>";
+$hora = date ("H");
 
+if ($hora <12) {
+    echo "¡Buenos dias!";
+    } elseif (hora <18) {
+        echo "¡Buenas tardes!";
+    } else {
+        echo "¡Buenas noches!";
+    }
 ?>
