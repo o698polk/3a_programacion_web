@@ -1,4 +1,4 @@
-  <?php
+ <?php
 $nombre= "Jessica Angulo";
 $edad= "24 AÑOS";
 $imagen= "Img/IMG_b8c31c78.jpg";
