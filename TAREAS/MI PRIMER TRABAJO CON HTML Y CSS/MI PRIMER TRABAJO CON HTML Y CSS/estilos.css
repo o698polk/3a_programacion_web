@@ -1,0 +1,177 @@
+/* Estilos principales y sistema de temas (claro/oscuro) */
+:root{
+  /* Tema claro (valores por defecto) */
+  --bg: hsla(66, 60%, 80%, 0.966);
+  --surface: hsla(0, 0%, 100%, 0.897);
+  --primary: #5b958d;
+  --accent: #ff7b90;
+  --muted: #6b7280;
+  --text: #0e1013;
+  --card: #ec8989;
+  --header-grad: linear-gradient(90deg, rgba(107,91,149,0.9), rgba(255,123,144,0.9));
+  --btn-bg: var(--primary);
+  --btn-color: #ffffff;
+  --btn-hover: #574477;
+}
+
+/* Tema oscuro: aplicar la clase .theme-dark al <html> o <body> */
+.theme-dark{
+  --bg: #0b1220;
+  --surface: #071026;
+  --primary: #8b5cf6;
+  --accent: #fb7185;
+  --muted: #cbd5e1;
+  --text: #e6eef8;
+  --card: #071026;
+  --header-grad: linear-gradient(90deg, rgba(59,130,246,0.12), rgba(139,92,246,0.18));
+  --btn-bg: #8666bd;
+  --btn-color: #fff;
+  --btn-hover: #5b21b6;
+}
+
+*{box-sizing: border-box}
+html,body{height:100%;}
+body{
+  margin:0;
+  font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: linear-gradient(180deg, var(--bg), #e9f0ff);
+  color: var(--text);
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+  transition: background-color .25s ease, color .25s ease;
+}
+
+/* Header */
+.site-header{
+  background: var(--header-grad);
+  color: var(--text);
+  padding: 36px 20px;
+  text-align: center;
+  position: relative;
+}
+.site-header h1{margin:0 0 8px;font-size:1.6rem;font-weight:600}
+.site-header h2{margin:0;font-size:1rem;font-weight:400;opacity:0.95}
+
+/* Contenedor principal */
+.container{
+  max-width:1000px;
+  margin: 28px auto;
+  padding:20px;
+}
+
+/* Versículo (ID y elemento) */
+#versiculo{
+  background: var(--card);
+  border-radius:12px;
+  padding:18px 20px;
+  box-shadow: 0 6px 18px rgba(46,60,80,0.06);
+  margin-bottom:18px;
+}
+#versiculo p{margin:0;font-size:1.1rem;color:var(--muted)}
+
+/* Galería: layout con Grid */
+.galeria h3{color:var(--primary);margin:8px 0 12px}
+.grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap:16px;
+}
+
+.card{
+  background:var(--card);
+  border-radius:10px;
+  overflow:hidden;
+  padding:10px;
+  text-align:center;
+  transition:transform .2s ease, box-shadow .2s ease, background-color .25s ease;
+  border: 10px solid rgba(0,0,0,0.06);
+}
+.card img{
+  width:100%;
+  height:140px;
+  object-fit:cover;
+  border-radius:8px;
+  display:block;
+  margin-bottom:8px;
+}
+.card figcaption{font-size:0.95rem;color:var(--muted)}
+.card:hover{
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 12px 30px rgba(5, 8, 187, 0.12);
+}
+
+/* Footer */
+.site-footer{
+  text-align:center;
+  color:var(--muted);
+  padding:18px 10px;
+}
+
+/* Enlaces y botones */
+a, .btn{
+  color:var(--primary);
+  text-decoration:none;
+}
+/* Botón con fondo degradado animado y foco accesible */
+.btn{
+  position: relative;
+  display: inline-block;
+  background: var(--btn-bg);
+  color: var(--btn-color);
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 0;
+  transition: transform .18s cubic-bezier(.2,.9,.2,1), box-shadow .18s ease;
+}
+
+/* pseudo-elemento para el degradado animado detrás del texto */
+.btn::before{
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(255,123,144,0.15), rgba(107,91,149,0.15));
+  transform: translateX(-10%);
+  transition: transform .6s ease, opacity .25s ease;
+  z-index: -1;
+}
+
+/* estado hover/active - movimiento suave y leve aumento */
+.btn:hover{
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 14px 34px rgba(16,24,40,0.12);
+}
+.btn:hover::before{
+  transform: translateX(10%);
+  opacity: 1;
+}
+
+/* foco visible accesible */
+.btn:focus-visible{
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(107,91,149,0.15), 0 8px 20px rgba(16,24,40,0.12);
+  border-radius: 12px;
+}
+
+/* animación de pulso sutil al entrar */
+@keyframes btn-pulse{
+  0%{transform: translateY(0) scale(1)}
+  50%{transform: translateY(-6px) scale(1.03)}
+  100%{transform: translateY(0) scale(1)}
+}
+
+/* Respeta preferencias de reducción de movimiento */
+@media (prefers-reduced-motion: reduce){
+  .btn, .btn::before{
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* Responsive tweaks */
+@media (max-width:420px){
+  .site-header h1{font-size:1.2rem}
+  .card img{height:110px}
+}

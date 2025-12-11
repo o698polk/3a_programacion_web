@@ -31,7 +31,7 @@ function EliminarActividad(){
                 showConfirmButton: false,
                 timer: 1500
               }).then(() => {
-                window.location.href = 'index.html';
+                window.location.href = 'index.php';
               });
             } else {
               Swal.fire({
@@ -83,7 +83,7 @@ function CrearActividad(){
            timer: 1500
          }).then(() => {
            $('#formulario_crear_actividad')[0].reset();
-           window.location.href = 'index.html';
+           window.location.href = 'index.php';
          });
        } else {
          Swal.fire({
@@ -120,7 +120,7 @@ function EditarActividad(){
       text: 'No se proporcionó un ID válido',
       confirmButtonText: 'Aceptar'
     }).then(() => {
-      window.location.href = 'index.html';
+      window.location.href = 'index.php';
     });
     return;
   }
@@ -190,7 +190,7 @@ function EditarActividad(){
             showConfirmButton: false,
             timer: 1500
           }).then(() => {
-            window.location.href = 'index.html';
+            window.location.href = 'index.php';
           });
         } else {
           Swal.fire({
@@ -226,7 +226,7 @@ function VerActividad(){
       text: 'No se proporcionó un ID válido',
       confirmButtonText: 'Aceptar'
     }).then(() => {
-      window.location.href = 'index.html';
+      window.location.href = 'index.php';
     });
     return;
   }
@@ -289,7 +289,7 @@ function CargarActividadParaEliminar(){
       text: 'No se proporcionó un ID válido',
       confirmButtonText: 'Aceptar'
     }).then(() => {
-      window.location.href = 'index.html';
+      window.location.href = 'index.php';
     });
     return;
   }
@@ -369,10 +369,10 @@ function MostrarActividad(){
               <td>${element.tipo}</td>
               <td>${element.fecha_de_creacion}</td>
               <td>${element.fecha_de_actualizacion}</td>
-              <td><a href="descargar_actividad.html?id=${element.id}" class="btn btn-info">Descargar</a></td>
-              <td><a href="ver_actividad.html?id=${element.id}" class="btn btn-info">Ver</a></td>
-              <td><a href="editar_actividad.html?id=${element.id}" class="btn btn-warning">Editar</a></td>
-              <td><a href="eliminar_actividad.html?id=${element.id}" class="btn btn-danger">Eliminar</a></td>
+              <td><a href="descargar_actividad.php?id=${element.id}" class="btn btn-info">Descargar</a></td>
+              <td><a href="ver_actividad.php?id=${element.id}" class="btn btn-info">Ver</a></td>
+              <td><a href="editar_actividad.php?id=${element.id}" class="btn btn-warning">Editar</a></td>
+              <td><a href="eliminar_actividad.php?id=${element.id}" class="btn btn-danger">Eliminar</a></td>
             </tr>
           `;
           });

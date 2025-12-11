@@ -1,0 +1,131 @@
+/* ===== VARIABLES DE COLOR ===== */
+:root {
+  --color-fondo: #f4f4f9;
+  --color-texto: #222;
+  --color-principal: #4a90e2;
+  --color-secundario: #e2e8f0;
+}
+
+body.oscuro {
+  --color-fondo: #1e1e2f;
+  --color-texto: #f0f0f0;
+  --color-principal: #7aa2f7;
+  --color-secundario: #2e2e4a;
+}
+
+/* ===== ESTILOS GENERALES ===== */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  transition: background 0.3s, color 0.3s;
+}
+
+/* ===== HEADER ===== */
+header {
+  background-color: var(--color-principal);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+header h1 {
+  font-size: 1.5rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--color-secundario);
+}
+
+#tema-toggle {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: white;
+}
+
+/* ===== MAIN ===== */
+main {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+article {
+  background-color: var(--color-secundario);
+  border-radius: 10px;
+  padding: 1rem;
+  width: 350px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+article:hover {
+  transform: translateY(-5px);
+}
+
+article img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.btn {
+  background-color: var(--color-principal);
+  color: white;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+  background-color: #357abd;
+  transform: scale(1.05);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  background-color: var(--color-principal);
+  color: white;
+  padding: 1rem;
+}
+
+/* ===== RESPONSIVIDAD ===== */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  main {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  article {
+    width: 90%;
+  }
+}

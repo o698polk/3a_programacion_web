@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mi Página Web</title>
+
+  <!-- Fuente de Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Enlace al archivo CSS externo -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Mi Pvida personal</h1>
+    <nav>
+      <a href="#">Inicio</a>
+      <a href="#">Artículos</a>
+      <a href="#">Contacto</a>
+    </nav>
+    <button id="temaBtn">Cambiar Tema</button>
+  </header>
+
+  <main>
+    <article>
+      <h2>Artículo 1</h2>
+      <img src="https://picsum.photos/300/200" alt="Imagen 1">
+      <p>Este es el primer artículo con una breve descripción del contenido que presenta.</p>
+    </article>
+
+    <article>
+      <h2>Artículo 2</h2>
+      <img src="https://picsum.photos/301/200" alt="Imagen 2">
+      <p>Mi estilo de vida dentro del instituto</p>
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; mi vida personal diaria | Contacto: info@mipagina.com</p>
+  </footer>
+
+  <!-- Script para cambiar el tema -->
+  <script>
+    const btn = document.getElementById('temaBtn');
+    btn.addEventListener('click', () => {
+      document.body.dataset.tema =
+        document.body.dataset.tema === 'oscuro' ? '' : 'oscuro';
+    });
+  </script>
+</body>
+</html>

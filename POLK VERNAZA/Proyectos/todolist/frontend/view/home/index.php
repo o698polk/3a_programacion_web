@@ -44,9 +44,6 @@
         </div>
       </div>
       
-  
-  
- 
 </section>
 
 <!-- Features Section -->

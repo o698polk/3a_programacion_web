@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página Web</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <h1 class="logo">Mi Sitio Web</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="#">Acerca de</a></li>
+                    <li><a href="#">Contacto</a></li>
+                    <li>
+                        <button class="theme-toggle" id="themeToggle">🌙</button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container main-section">
+        <h1>Artículos Destacados</h1>
+        <div class="articles-container">
+            <article class="article">
+                <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Desarrollo Web">
+                <div class="article-content">
+                    <h2>Desarrollo Web Moderno</h2>
+                    <p>Exploramos las últimas tendencias en desarrollo web, incluyendo frameworks JavaScript, diseño responsivo y mejores prácticas de accesibilidad. Aprende cómo crear experiencias web atractivas y funcionales.</p>
+                    <button class="btn">Leer más</button>
+                </div>
+            </article>
+            <article class="article">
+                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Diseño UX/UI">
+                <div class="article-content">
+                    <h2>Principios de Diseño UX/UI</h2>
+                    <p>Descubre los fundamentos del diseño centrado en el usuario. Desde la investigación hasta la implementación, te guiamos a través de los procesos que hacen que las interfaces sean intuitivas y agradables.</p>
+                    <button class="btn">Leer más</button>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2023 Mi Sitio Web. Todos los derechos reservados.</p>
+            <p>Contacto: info@misitioweb.com | Tel: +34 123 456 789</p>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle de tema oscuro/claro
+        const themeToggle = document.getElementById('themeToggle');
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        
+        // Aplicar tema guardado
+        if (currentTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            themeToggle.textContent = '☀️';
+        } else {
+            document.documentElement.setAttribute('data-theme', 'light');
+            themeToggle.textContent = '🌙';
+        }
+        
+        // Cambiar tema al hacer clic
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            
+            themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+        });
+    </script>
+</body>
+</html>

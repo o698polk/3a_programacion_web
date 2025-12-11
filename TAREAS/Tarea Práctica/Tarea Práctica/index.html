@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda de Maquillaje GlamBeauty</title>
+  <link rel="stylesheet" href="estilos.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>💋 GlamBeauty</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Productos</a></li>
+        <li><a href="#">Ofertas</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+    <button id="modoTema">🌙</button>
+  </header>
+
+  <!-- SECCIÓN PRINCIPAL -->
+  <main>
+    <h2 class="titulo-principal">Nuestros Productos Más Populares</h2>
+    <section class="articulos">
+      <article>
+        <img src="https://images.unsplash.com/photo-1611862369030-6a2394cf1de6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8bGFiaWFsfHx8fHx8MTY5NTA3NDI3NQ&ixlib=rb-4.0.3&q=80&w=400" alt="Labial Rosa">
+        <h3>Labial Rosa Glam</h3>
+        <p>Un tono vibrante que realza tu sonrisa y combina con cualquier estilo. Textura suave y duradera.</p>
+        <button class="btn">Agregar al carrito</button>
+      </article>
+
+      <article>
+        <img src="https://images.unsplash.com/photo-1600180758895-13bfa348bfe1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Base de Maquillaje">
+        <h3>Base Perfect Skin</h3>
+        <p>Fórmula ligera que se adapta a tu tono de piel, brindando una cobertura natural durante todo el día.</p>
+        <button class="btn">Agregar al carrito</button>
+      </article>
+
+      <article>
+        <img src="https://images.unsplash.com/photo-1601041911288-cb2c2ec0e4ff?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Paleta de Sombras">
+        <h3>Paleta de Sombras Colors</h3>
+        <p>12 tonos únicos con acabado mate y brillante para crear looks impresionantes y elegantes.</p>
+        <button class="btn">Agregar al carrito</button>
+      </article>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 GlamBeauty | Contacto: yadicabeza12.96@gmail.com</p>
+  </footer>
+
+  <!-- SCRIPT MODO CLARO/OSCURO -->
+  <script>
+    const botonTema = document.getElementById('modoTema');
+    botonTema.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      botonTema.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+    });
+  </script>
+
+</body>
+</html>

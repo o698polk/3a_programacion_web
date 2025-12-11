@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Página con CSS</title>
+  <link rel="stylesheet" href="estilos.css">
+  <!-- Fuente de Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <h1>Mi Página de Ejemplo</h1>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#articulos">Artículos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+    <button id="tema-toggle">🌙</button>
+  </header>
+
+  <!-- SECCIÓN PRINCIPAL -->
+  <main id="articulos">
+    <article>
+      <img src="https://picsum.photos/400/250?random=1" alt="Imagen de ejemplo 1">
+      <h2>Artículo 1</h2>
+      <p>
+        Este es el primer artículo. Aquí aplicamos estilos de CSS para crear un diseño atractivo y moderno.
+      </p>
+      <button class="btn">Leer más</button>
+    </article>
+
+    <article>
+      <img src="https://picsum.photos/400/250?random=2" alt="Imagen de ejemplo 2">
+      <h2>Artículo 2</h2>
+      <p>
+        Este es el segundo artículo. Usamos Flexbox para organizar el contenido y hacerlo responsivo.
+      </p>
+      <button class="btn">Leer más</button>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="contacto">
+    <p>© 2025 Mi Sitio Web | Contacto: ejemplo@correo.com</p>
+  </footer>
+
+  <script>
+    // Tema oscuro / claro
+    const boton = document.getElementById('tema-toggle');
+    boton.addEventListener('click', () => {
+      document.body.classList.toggle('oscuro');
+      boton.textContent = document.body.classList.contains('oscuro') ? '☀️' : '🌙';
+    });
+  </script>
+</body>
+</html>

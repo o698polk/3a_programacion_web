@@ -25,7 +25,9 @@ class endpoint{
                 echo consultas::crearActividad($_POST['actividad'], $_POST['descripcion'], $_POST['estado'], $_POST['tipo']);
             } else if(isset($_POST['editar_actividad_postmethod'])){
                 echo consultas::editarActividad($_POST['id'], $_POST['actividad'], $_POST['descripcion'], $_POST['estado'], $_POST['tipo']);
-            }  else if(isset($_POST['login_usuario_postmethod'])){
+            } else if(isset($_POST['eliminar_actividad'])){
+                echo consultas::eliminarActividad($_POST['id']);
+            } else if(isset($_POST['login_usuario_postmethod'])){
                 echo user::loginUsuario($_POST['email'], $_POST['password']);
             }
              else {
