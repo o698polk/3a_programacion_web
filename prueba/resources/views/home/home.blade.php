@@ -1,71 +1,104 @@
-<!-- DESPLEGANDO TODA LA PLATILLA REALIZADA--->
 @extends('layaout.app')
 
-<!-- DESPLEGANDO EL TITULO DE ESTA PAGINA-->
-@section('title', ' HOLA MUNDO')
+@section('title', 'Inicio')
 
-<!-- DESPLEGANDO TODO EL CONTENIDO DE ESTA PAGINA--->
 @section('content')
-
-<div class="col-12 col-lg-8 order-2 order-md-3 order-lg-2 mb-4">
-                  <div class="card">
-                    <div class="row row-bordered g-0">
-                      <div class="col-md-8">
-                        <h5 class="card-header m-0 me-2 pb-3">Total Revenue</h5>
-                        <div id="totalRevenueChart" class="px-2"></div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="card-body">
-                          <div class="text-center">
-                            <div class="dropdown">
-                              <button
-                                class="btn btn-sm btn-outline-primary dropdown-toggle"
-                                type="button"
-                                id="growthReportId"
-                                data-bs-toggle="dropdown"
-                                aria-haspopup="true"
-                                aria-expanded="false"
-                              >
-                                2022
-                              </button>
-                              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="growthReportId">
-                                <a class="dropdown-item" href="javascript:void(0);">2021</a>
-                                <a class="dropdown-item" href="javascript:void(0);">2020</a>
-                                <a class="dropdown-item" href="javascript:void(0);">2019</a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div id="growthChart"></div>
-                        <div class="text-center fw-semibold pt-3 mb-2">62% Company Growth</div>
-
-                        <div class="d-flex px-xxl-4 px-lg-2 p-4 gap-xxl-3 gap-lg-1 gap-3 justify-content-between">
-                          <div class="d-flex">
-                            <div class="me-2">
-                              <span class="badge bg-label-primary p-2"><i class="bx bx-dollar text-primary"></i></span>
-                            </div>
-                            <div class="d-flex flex-column">
-                              <small>2022</small>
-                              <h6 class="mb-0">$32.5k</h6>
-                            </div>
-                          </div>
-                          <div class="d-flex">
-                            <div class="me-2">
-                              <span class="badge bg-label-info p-2"><i class="bx bx-wallet text-info"></i></span>
-                            </div>
-                            <div class="d-flex flex-column">
-                              <small>2021</small>
-                              <h6 class="mb-0">$41.2k</h6>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card" style="background-color: #ffffff; border: 1px solid #808080;">
+                <div class="card-header" style="background-color: #ffffff; border-bottom: 1px solid #808080;">
+                    <h4 class="mb-0" style="color: #000000;">
+                        <i class="bx bx-home" style="color: #dc3545;"></i> Panel de Control
+                    </h4>
                 </div>
+                <div class="card-body" style="background-color: #ffffff;">
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <div class="card" style="background-color: #ffffff; border: 1px solid #808080;">
+                                <div class="card-body text-center">
+                                    <i class="bx bx-user" style="font-size: 3rem; color: #dc3545;"></i>
+                                    <h5 class="mt-3" style="color: #000000;">Usuarios</h5>
+                                    <p class="text-muted" style="color: #000000;">Gestiona los usuarios del sistema</p>
+                                    <a href="{{ route('admin.users.index') }}" class="btn" style="background-color: #dc3545; color: #ffffff; border: none;">
+                                        <i class="bx bx-right-arrow-alt" style="color: #ffffff;"></i> Ver Usuarios
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card" style="background-color: #ffffff; border: 1px solid #808080;">
+                                <div class="card-body text-center">
+                                    <i class="bx bx-shield" style="font-size: 3rem; color: #dc3545;"></i>
+                                    <h5 class="mt-3" style="color: #000000;">Roles</h5>
+                                    <p class="text-muted" style="color: #000000;">Administra los roles del sistema</p>
+                                    <a href="{{ route('admin.roles.index') }}" class="btn" style="background-color: #dc3545; color: #ffffff; border: none;">
+                                        <i class="bx bx-right-arrow-alt" style="color: #ffffff;"></i> Ver Roles
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card" style="background-color: #ffffff; border: 1px solid #808080;">
+                                <div class="card-body text-center">
+                                    <i class="bx bx-check-circle" style="font-size: 3rem; color: #dc3545;"></i>
+                                    <h5 class="mt-3" style="color: #000000;">Permisos</h5>
+                                    <p class="text-muted" style="color: #000000;">Gestiona los permisos del sistema</p>
+                                    <a href="{{ route('admin.permissions.index') }}" class="btn" style="background-color: #dc3545; color: #ffffff; border: none;">
+                                        <i class="bx bx-right-arrow-alt" style="color: #ffffff;"></i> Ver Permisos
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card" style="background-color: #ffffff; border: 1px solid #808080;">
+                                <div class="card-body text-center">
+                                    <i class="bx bx-group" style="font-size: 3rem; color: #dc3545;"></i>
+                                    <h5 class="mt-3" style="color: #000000;">Afiliados</h5>
+                                    <p class="text-muted" style="color: #000000;">Gestiona las fichas socioeconómicas</p>
+                                    <a href="{{ route('admin.afiliados.index') }}" class="btn" style="background-color: #dc3545; color: #ffffff; border: none;">
+                                        <i class="bx bx-right-arrow-alt" style="color: #ffffff;"></i> Ver Afiliados
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card" style="background-color: #ffffff; border: 1px solid #808080;">
+                                <div class="card-body text-center">
+                                    <i class="bx bx-line-chart" style="font-size: 3rem; color: #dc3545;"></i>
+                                    <h5 class="mt-3" style="color: #000000;">Mediciones</h5>
+                                    <p class="text-muted" style="color: #000000;">Registra peso, talla e IMC</p>
+                                    <a href="{{ route('admin.mediciones.index') }}" class="btn" style="background-color: #dc3545; color: #ffffff; border: none;">
+                                        <i class="bx bx-right-arrow-alt" style="color: #ffffff;"></i> Ver Mediciones
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-
-
-
-
+                    @auth
+                        <div class="row mt-4">
+                            <div class="col-12">
+                                <div class="card" style="background-color: #f8f9fa; border: 1px solid #808080;">
+                                    <div class="card-body">
+                                        <h5 style="color: #000000;">Bienvenido, {{ Auth::user()->name }}</h5>
+                                        <p style="color: #000000;">Email: {{ Auth::user()->email }}</p>
+                                        @if(Auth::user()->roles->count() > 0)
+                                            <p style="color: #000000;">
+                                                Roles: 
+                                                @foreach(Auth::user()->roles as $role)
+                                                    <span class="badge" style="background-color: #dc3545; color: #ffffff; border: 1px solid #808080;">{{ $role->name }}</span>
+                                                @endforeach
+                                            </p>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endauth
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
